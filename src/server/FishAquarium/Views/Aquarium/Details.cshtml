@@ -1,0 +1,74 @@
+﻿@model FishAquarium.Models.Aquarium
+
+@{
+    ViewBag.Title = "Details";
+}
+
+<h2>Details</h2>
+
+<div>
+    <h4>Aquarium</h4>
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>
+            @Html.DisplayNameFor(model => model.Capacity)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Capacity)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Mass)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Mass)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Length)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Length)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Width)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Width)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Heigth)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Heigth)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.GlassThickness)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.GlassThickness)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.FkPortion)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.FkPortion)
+        </dd>
+
+    </dl>
+</div>
+<p>
+    @Html.ActionLink("Edit", "Edit", new { id = Model.Id }) |
+    @Html.ActionLink("Back to List", "Index")
+</p>

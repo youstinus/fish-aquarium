@@ -1,0 +1,49 @@
+﻿@page
+@model FishAquariumWebApp.Pages.Supplements.DetailsModel
+
+@{
+    ViewData["Title"] = "Details";
+}
+
+<h2>Details</h2>
+
+<div>
+    <h4>Supplement</h4>
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>
+            @Html.DisplayNameFor(model => model.Supplement.Name)
+        </dt>
+        <dd>
+            @Html.DisplayFor(model => model.Supplement.Name)
+        </dd>
+        <dt>
+            @Html.DisplayNameFor(model => model.Supplement.Mass)
+        </dt>
+        <dd>
+            @Html.DisplayFor(model => model.Supplement.Mass)
+        </dd>
+        <dt>
+            @Html.DisplayNameFor(model => model.Supplement.Manual)
+        </dt>
+        <dd>
+            @Html.DisplayFor(model => model.Supplement.Manual)
+        </dd>
+        <dt>
+            @Html.DisplayNameFor(model => model.Supplement.FoodComposition)
+        </dt>
+        <dd>
+            @Html.DisplayFor(model => model.Supplement.FoodComposition)
+        </dd>
+        <dt>
+            @Html.DisplayNameFor(model => model.Supplement.ExpirationDate)
+        </dt>
+        <dd>
+            @Html.DisplayFor(model => model.Supplement.ExpirationDate)
+        </dd>
+    </dl>
+</div>
+<div>
+    <a asp-page="./Edit" asp-route-id="@Model.Supplement.Id">Edit</a> |
+    <a asp-page="./Index">Back to List</a>
+</div>

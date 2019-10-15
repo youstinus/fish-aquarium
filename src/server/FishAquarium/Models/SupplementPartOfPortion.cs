@@ -1,4 +1,4 @@
-﻿namespace Zuvytes.Models
+﻿namespace FishAquarium.Models
 {
     public partial class SupplementPartOfPortion
     {

@@ -1,0 +1,25 @@
+﻿@page
+@model FishAquariumWebApp.Pages.Portions.DetailsModel
+
+@{
+    ViewData["Title"] = "Details";
+}
+
+<h2>Details</h2>
+
+<div>
+    <h4>Portion</h4>
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>
+            @Html.DisplayNameFor(model => model.Portion.PreparationDate)
+        </dt>
+        <dd>
+            @Html.DisplayFor(model => model.Portion.PreparationDate)
+        </dd>
+    </dl>
+</div>
+<div>
+    <a asp-page="./Edit" asp-route-id="@Model.Portion.Id">Edit</a> |
+    <a asp-page="./Index">Back to List</a>
+</div>

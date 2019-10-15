@@ -13,8 +13,8 @@
     <ProjectTypeGuids>{349c5851-65df-11da-9384-00065b846f21};{fae04ec0-301f-11d3-bf4b-00c04f79efbc}</ProjectTypeGuids>
     <OutputType>Library</OutputType>
     <AppDesignerFolder>Properties</AppDesignerFolder>
-    <RootNamespace>Zuvytes</RootNamespace>
-    <AssemblyName>Zuvytes</AssemblyName>
+    <RootNamespace>FishAquarium</RootNamespace>
+    <AssemblyName>FishAquarium</AssemblyName>
     <TargetFrameworkVersion>v4.6.1</TargetFrameworkVersion>
     <MvcBuildViews>false</MvcBuildViews>
     <UseIISExpress>true</UseIISExpress>
@@ -49,6 +49,12 @@
   <ItemGroup>
     <Reference Include="BouncyCastle.Crypto, Version=1.8.3.0, Culture=neutral, PublicKeyToken=0e99375e54769942">
       <HintPath>..\packages\BouncyCastle.1.8.3.1\lib\BouncyCastle.Crypto.dll</HintPath>
+    </Reference>
+    <Reference Include="EntityFramework, Version=6.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL">
+      <HintPath>..\packages\EntityFramework.6.1.3\lib\net45\EntityFramework.dll</HintPath>
+    </Reference>
+    <Reference Include="EntityFramework.SqlServer, Version=6.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL">
+      <HintPath>..\packages\EntityFramework.6.1.3\lib\net45\EntityFramework.SqlServer.dll</HintPath>
     </Reference>
     <Reference Include="Google.Protobuf, Version=3.7.0.0, Culture=neutral, PublicKeyToken=a7d26565bac4d604, processorArchitecture=MSIL">
       <HintPath>..\packages\Google.Protobuf.3.7.0\lib\net45\Google.Protobuf.dll</HintPath>
@@ -255,19 +261,21 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Configs\AquariumInitializer.cs" />
     <Compile Include="App_Start\BundleConfig.cs" />
     <Compile Include="App_Start\FilterConfig.cs" />
     <Compile Include="App_Start\RouteConfig.cs" />
-    <Compile Include="Controllers\AtaskaitaController.cs" />
-    <Compile Include="Controllers\AutomobilisController.cs" />
-    <Compile Include="Controllers\DarbuotojasController.cs" />
+    <Compile Include="Controllers2\AtaskaitaController.cs" />
+    <Compile Include="Controllers2\AutomobilisController.cs" />
+    <Compile Include="Controllers2\DarbuotojasController.cs" />
     <Compile Include="Controllers\HomeController.cs" />
-    <Compile Include="Controllers\KlientasController.cs" />
-    <Compile Include="Controllers\MarkeController.cs" />
-    <Compile Include="Controllers\MiestasController.cs" />
-    <Compile Include="Controllers\ModelisController.cs" />
-    <Compile Include="Controllers\PaslaugaController.cs" />
-    <Compile Include="Controllers\SutartisController.cs" />
+    <Compile Include="Controllers2\KlientasController.cs" />
+    <Compile Include="Controllers2\MarkeController.cs" />
+    <Compile Include="Controllers2\MiestasController.cs" />
+    <Compile Include="Controllers2\ModelisController.cs" />
+    <Compile Include="Controllers2\PaslaugaController.cs" />
+    <Compile Include="Controllers2\SutartisController.cs" />
+    <Compile Include="Controllers\AquariumController.cs" />
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
@@ -300,7 +308,7 @@
     <Compile Include="Models\EquipmentTypes.cs" />
     <Compile Include="Models\Fish.cs" />
     <Compile Include="Models\FishGenderTypes.cs" />
-    <Compile Include="App_Start\FishAquariumContext.cs" />
+    <Compile Include="Configs\FishAquariumContext.cs" />
     <Compile Include="Models\Food.cs" />
     <Compile Include="Models\FoodMixedInPortion.cs" />
     <Compile Include="Models\Parameters.cs" />
@@ -313,38 +321,38 @@
     <Compile Include="Models\User.cs" />
     <Compile Include="Models\UserTypes.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <Compile Include="Repos\AikstelesRepository.cs" />
-    <Compile Include="Repos\AtaskaituRepository.cs" />
-    <Compile Include="Repos\AutoBusenaRepository.cs" />
-    <Compile Include="Repos\AutomobiliaiRepository.cs" />
-    <Compile Include="Repos\BagazuRepository.cs" />
-    <Compile Include="Repos\DarbuotojasRepository.cs" />
-    <Compile Include="Repos\DegaluTipasRepository.cs" />
-    <Compile Include="Repos\KebulasRepository.cs" />
-    <Compile Include="Repos\KlientasRepository.cs" />
-    <Compile Include="Repos\MarkeRepository.cs" />
-    <Compile Include="Repos\MiestasRepository.cs" />
-    <Compile Include="Repos\ModeliuRepository.cs" />
-    <Compile Include="Repos\PaslaugaRepository.cs" />
-    <Compile Include="Repos\PaslaugosKainaRepository.cs" />
-    <Compile Include="Repos\PavaruDezeRepository.cs" />
-    <Compile Include="Repos\SutartiesBusenosRepository.cs" />
-    <Compile Include="Repos\SutartisRepository.cs" />
-    <Compile Include="Repos\UzsakytaPaslaugaRepository.cs" />
-    <Compile Include="ViewModels\AutoEditViewModel.cs" />
-    <Compile Include="ViewModels\AutoListViewModel.cs" />
-    <Compile Include="ViewModels\ModelisEditViewModel.cs" />
-    <Compile Include="ViewModels\ModelisViewModel.cs" />
-    <Compile Include="ViewModels\PaslaugaEditViewModel.cs" />
-    <Compile Include="ViewModels\PaslaugosKainaViewModel.cs" />
-    <Compile Include="ViewModels\PaslauguAtaskaitaViewModel.cs" />
-    <Compile Include="ViewModels\PslgAtaskaitaViewModel.cs" />
-    <Compile Include="ViewModels\SAtaskaitaViewModel.cs" />
-    <Compile Include="ViewModels\SutartisAtaskViewModel.cs" />
-    <Compile Include="ViewModels\SutartisEditViewModel.cs" />
-    <Compile Include="ViewModels\SutartisListViewModel.cs" />
-    <Compile Include="ViewModels\VeluojanciosSutartysViewModel.cs" />
-    <Compile Include="ViewModels\VeluojanciosViewModel.cs" />
+    <Compile Include="Repos2\AikstelesRepository.cs" />
+    <Compile Include="Repos2\AtaskaituRepository.cs" />
+    <Compile Include="Repos2\AutoBusenaRepository.cs" />
+    <Compile Include="Repos2\AutomobiliaiRepository.cs" />
+    <Compile Include="Repos2\BagazuRepository.cs" />
+    <Compile Include="Repos2\DarbuotojasRepository.cs" />
+    <Compile Include="Repos2\DegaluTipasRepository.cs" />
+    <Compile Include="Repos2\KebulasRepository.cs" />
+    <Compile Include="Repos2\KlientasRepository.cs" />
+    <Compile Include="Repos2\MarkeRepository.cs" />
+    <Compile Include="Repos2\MiestasRepository.cs" />
+    <Compile Include="Repos2\ModeliuRepository.cs" />
+    <Compile Include="Repos2\PaslaugaRepository.cs" />
+    <Compile Include="Repos2\PaslaugosKainaRepository.cs" />
+    <Compile Include="Repos2\PavaruDezeRepository.cs" />
+    <Compile Include="Repos2\SutartiesBusenosRepository.cs" />
+    <Compile Include="Repos2\SutartisRepository.cs" />
+    <Compile Include="Repos2\UzsakytaPaslaugaRepository.cs" />
+    <Compile Include="ViewModels2\AutoEditViewModel.cs" />
+    <Compile Include="ViewModels2\AutoListViewModel.cs" />
+    <Compile Include="ViewModels2\ModelisEditViewModel.cs" />
+    <Compile Include="ViewModels2\ModelisViewModel.cs" />
+    <Compile Include="ViewModels2\PaslaugaEditViewModel.cs" />
+    <Compile Include="ViewModels2\PaslaugosKainaViewModel.cs" />
+    <Compile Include="ViewModels2\PaslauguAtaskaitaViewModel.cs" />
+    <Compile Include="ViewModels2\PslgAtaskaitaViewModel.cs" />
+    <Compile Include="ViewModels2\SAtaskaitaViewModel.cs" />
+    <Compile Include="ViewModels2\SutartisAtaskViewModel.cs" />
+    <Compile Include="ViewModels2\SutartisEditViewModel.cs" />
+    <Compile Include="ViewModels2\SutartisListViewModel.cs" />
+    <Compile Include="ViewModels2\VeluojanciosSutartysViewModel.cs" />
+    <Compile Include="ViewModels2\VeluojanciosViewModel.cs" />
   </ItemGroup>
   <ItemGroup>
     <Content Include="Content\bootstrap-grid.css" />
@@ -459,49 +467,58 @@
     <Content Include="Scripts\popper.js.map" />
     <Content Include="Scripts\popper-utils.min.js.map" />
     <Content Include="Scripts\popper-utils.js.map" />
-    <Content Include="Views\Ataskaita\Index.cshtml" />
-    <Content Include="Views\Ataskaita\Sutartys.cshtml" />
-    <Content Include="Views\Ataskaita\Veluojancios.cshtml" />
-    <Content Include="Views\Automobilis\Create.cshtml" />
-    <Content Include="Views\Automobilis\Delete.cshtml" />
-    <Content Include="Views\Automobilis\Edit.cshtml" />
-    <Content Include="Views\Automobilis\Index.cshtml" />
-    <Content Include="Views\Darbuotojas\Create.cshtml" />
-    <Content Include="Views\Darbuotojas\Delete.cshtml" />
-    <Content Include="Views\Darbuotojas\Edit.cshtml" />
-    <Content Include="Views\Darbuotojas\Index.cshtml" />
+    <Content Include="Views2\Ataskaita\Index.cshtml" />
+    <Content Include="Views2\Ataskaita\Sutartys.cshtml" />
+    <Content Include="Views2\Ataskaita\Veluojancios.cshtml" />
+    <Content Include="Views2\Automobilis\Create.cshtml" />
+    <Content Include="Views2\Automobilis\Delete.cshtml" />
+    <Content Include="Views2\Automobilis\Edit.cshtml" />
+    <Content Include="Views2\Automobilis\Index.cshtml" />
+    <Content Include="Views2\Darbuotojas\Create.cshtml" />
+    <Content Include="Views2\Darbuotojas\Delete.cshtml" />
+    <Content Include="Views2\Darbuotojas\Edit.cshtml" />
+    <Content Include="Views2\Darbuotojas\Index.cshtml" />
     <Content Include="Views\Home\About.cshtml" />
     <Content Include="Views\Home\Contact.cshtml" />
     <Content Include="Views\Home\Index.cshtml" />
-    <Content Include="Views\Klientas\Create.cshtml" />
-    <Content Include="Views\Klientas\Delete.cshtml" />
-    <Content Include="Views\Klientas\Edit.cshtml" />
-    <Content Include="Views\Klientas\Index.cshtml" />
-    <Content Include="Views\Marke\Create.cshtml" />
-    <Content Include="Views\Marke\Delete.cshtml" />
-    <Content Include="Views\Marke\Edit.cshtml" />
-    <Content Include="Views\Marke\Index.cshtml" />
-    <Content Include="Views\Miestas\Index.cshtml" />
-    <Content Include="Views\Modelis\Create.cshtml" />
-    <Content Include="Views\Modelis\Delete.cshtml" />
-    <Content Include="Views\Modelis\Edit.cshtml" />
-    <Content Include="Views\Modelis\Index.cshtml" />
-    <Content Include="Views\Paslauga\Create.cshtml" />
-    <Content Include="Views\Paslauga\Delete.cshtml" />
-    <Content Include="Views\Paslauga\Edit.cshtml" />
-    <Content Include="Views\Paslauga\Index.cshtml" />
-    <Content Include="Views\Shared\Error.cshtml" />
-    <Content Include="Views\Shared\PaslaugosKaina.cshtml" />
-    <Content Include="Views\Shared\_Layout.cshtml" />
-    <Content Include="Views\Sutartis\Create.cshtml" />
-    <Content Include="Views\Sutartis\Delete.cshtml" />
-    <Content Include="Views\Sutartis\Edit.cshtml" />
-    <Content Include="Views\Sutartis\Index.cshtml" />
+    <Content Include="Views2\Klientas\Create.cshtml" />
+    <Content Include="Views2\Klientas\Delete.cshtml" />
+    <Content Include="Views2\Klientas\Edit.cshtml" />
+    <Content Include="Views2\Klientas\Index.cshtml" />
+    <Content Include="Views2\Marke\Create.cshtml" />
+    <Content Include="Views2\Marke\Delete.cshtml" />
+    <Content Include="Views2\Marke\Edit.cshtml" />
+    <Content Include="Views2\Marke\Index.cshtml" />
+    <Content Include="Views2\Miestas\Index.cshtml" />
+    <Content Include="Views2\Modelis\Create.cshtml" />
+    <Content Include="Views2\Modelis\Delete.cshtml" />
+    <Content Include="Views2\Modelis\Edit.cshtml" />
+    <Content Include="Views2\Modelis\Index.cshtml" />
+    <Content Include="Views2\Paslauga\Create.cshtml" />
+    <Content Include="Views2\Paslauga\Delete.cshtml" />
+    <Content Include="Views2\Paslauga\Edit.cshtml" />
+    <Content Include="Views2\Paslauga\Index.cshtml" />
+    <Content Include="Views2\Shared\Error.cshtml" />
+    <Content Include="Views2\Shared\PaslaugosKaina.cshtml" />
+    <Content Include="Views2\Shared\_Layout.cshtml" />
+    <Content Include="Views2\Sutartis\Create.cshtml" />
+    <Content Include="Views2\Sutartis\Delete.cshtml" />
+    <Content Include="Views2\Sutartis\Edit.cshtml" />
+    <Content Include="Views2\Sutartis\Index.cshtml" />
     <Content Include="Views\Web.config" />
+    <Content Include="Views2\_ViewStart.cshtml" />
     <Content Include="Views\_ViewStart.cshtml" />
+    <Content Include="Views\Shared\_Layout.cshtml" />
+    <Content Include="Views\Aquarium\Create.cshtml" />
+    <Content Include="Views\Aquarium\Delete.cshtml" />
+    <Content Include="Views\Aquarium\Details.cshtml" />
+    <Content Include="Views\Aquarium\Edit.cshtml" />
+    <Content Include="Views\Aquarium\Index.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
+    <Folder Include="Repos\" />
+    <Folder Include="ViewModels\" />
   </ItemGroup>
   <ItemGroup>
     <None Include="packages.config" />
