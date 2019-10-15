@@ -1,4 +1,4 @@
-﻿namespace Zuvytes.Models2
+﻿namespace FishAquarium.Models2
 {
     public class DegaluTipas
     {

@@ -1,0 +1,59 @@
+﻿@page
+@model FishAquariumWebApp.Pages.Parameters.CreateModel
+
+@{
+    ViewData["Title"] = "Create";
+}
+
+<h2>Create</h2>
+
+<h4>Parameters</h4>
+<hr />
+<div class="row">
+    <div class="col-md-4">
+        <form method="post">
+            <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+            <div class="form-group">
+                <label asp-for="Parameters.Name" class="control-label"></label>
+                <input asp-for="Parameters.Name" class="form-control" />
+                <span asp-validation-for="Parameters.Name" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Parameters.Value" class="control-label"></label>
+                <input asp-for="Parameters.Value" class="form-control" />
+                <span asp-validation-for="Parameters.Value" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Parameters.Type" class="control-label"></label>
+                <input asp-for="Parameters.Type" class="form-control" />
+                <span asp-validation-for="Parameters.Type" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Parameters.Id" class="control-label"></label>
+                <input asp-for="Parameters.Id" class="form-control" />
+                <span asp-validation-for="Parameters.Id" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Parameters.FkFish" class="control-label"></label>
+                <input asp-for="Parameters.FkFish" class="form-control" />
+                <span asp-validation-for="Parameters.FkFish" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Parameters.FkAquarium" class="control-label"></label>
+                <input asp-for="Parameters.FkAquarium" class="form-control" />
+                <span asp-validation-for="Parameters.FkAquarium" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <input type="submit" value="Create" class="btn btn-default" />
+            </div>
+        </form>
+    </div>
+</div>
+
+<div>
+    <a asp-page="Index">Back to List</a>
+</div>
+
+@section Scripts {
+    @{await Html.RenderPartialAsync("_ValidationScriptsPartial");}
+}

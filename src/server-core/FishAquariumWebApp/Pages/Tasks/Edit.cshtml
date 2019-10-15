@@ -1,0 +1,65 @@
+﻿@page
+@model FishAquariumWebApp.Pages.Tasks.EditModel
+
+@{
+    ViewData["Title"] = "Edit";
+}
+
+<h2>Edit</h2>
+
+<h4>Tasks</h4>
+<hr />
+<div class="row">
+    <div class="col-md-4">
+        <form method="post">
+            <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+            <div class="form-group">
+                <label asp-for="Tasks.Name" class="control-label"></label>
+                <input asp-for="Tasks.Name" class="form-control" />
+                <span asp-validation-for="Tasks.Name" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Tasks.Duration" class="control-label"></label>
+                <input asp-for="Tasks.Duration" class="form-control" />
+                <span asp-validation-for="Tasks.Duration" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Tasks.StartTime" class="control-label"></label>
+                <input asp-for="Tasks.StartTime" class="form-control" />
+                <span asp-validation-for="Tasks.StartTime" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Tasks.Description" class="control-label"></label>
+                <input asp-for="Tasks.Description" class="form-control" />
+                <span asp-validation-for="Tasks.Description" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Tasks.State" class="control-label"></label>
+                <input asp-for="Tasks.State" class="form-control" />
+                <span asp-validation-for="Tasks.State" class="text-danger"></span>
+            </div>
+            <input type="hidden" asp-for="Tasks.Id" />
+            <div class="form-group">
+                <label asp-for="Tasks.FkAquarium" class="control-label"></label>
+                <input asp-for="Tasks.FkAquarium" class="form-control" />
+                <span asp-validation-for="Tasks.FkAquarium" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Tasks.FkUser" class="control-label"></label>
+                <input asp-for="Tasks.FkUser" class="form-control" />
+                <span asp-validation-for="Tasks.FkUser" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <input type="submit" value="Save" class="btn btn-default" />
+            </div>
+        </form>
+    </div>
+</div>
+
+<div>
+    <a asp-page="./Index">Back to List</a>
+</div>
+
+@section Scripts {
+    @{await Html.RenderPartialAsync("_ValidationScriptsPartial");}
+}

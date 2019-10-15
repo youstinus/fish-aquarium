@@ -1,0 +1,84 @@
+﻿@page
+@model FishAquariumWebApp.Pages.Fishes.IndexModel
+
+@{
+    ViewData["Title"] = "Index";
+}
+
+<h2>Index</h2>
+
+<p>
+    <a asp-page="Create">Create New</a>
+</p>
+<table class="table">
+    <thead>
+        <tr>
+            <th>
+                @Html.DisplayNameFor(model => model.Fish[0].Species)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Fish[0].Mass)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Fish[0].Size)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Fish[0].Origin)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Fish[0].ArrivalDate)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Fish[0].LifeExpectancy)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Fish[0].Description)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Fish[0].Gender)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Fish[0].FkAquarium)
+            </th>
+            <th></th>
+        </tr>
+    </thead>
+    <tbody>
+@foreach (var item in Model.Fish) {
+        <tr>
+            <td>
+                @Html.DisplayFor(modelItem => item.Species)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Mass)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Size)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Origin)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.ArrivalDate)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.LifeExpectancy)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Description)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Gender)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.FkAquarium)
+            </td>
+            <td>
+                <a asp-page="./Edit" asp-route-id="@item.Id">Edit</a> |
+                <a asp-page="./Details" asp-route-id="@item.Id">Details</a> |
+                <a asp-page="./Delete" asp-route-id="@item.Id">Delete</a>
+            </td>
+        </tr>
+}
+    </tbody>
+</table>

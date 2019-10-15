@@ -1,0 +1,76 @@
+﻿@page
+@model FishAquariumWebApp.Pages.Fishes.DeleteModel
+
+@{
+    ViewData["Title"] = "Delete";
+}
+
+<h2>Delete</h2>
+
+<h3>Are you sure you want to delete this?</h3>
+<div>
+    <h4>Fish</h4>
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>
+            @Html.DisplayNameFor(model => model.Fish.Species)
+        </dt>
+        <dd>
+            @Html.DisplayFor(model => model.Fish.Species)
+        </dd>
+        <dt>
+            @Html.DisplayNameFor(model => model.Fish.Mass)
+        </dt>
+        <dd>
+            @Html.DisplayFor(model => model.Fish.Mass)
+        </dd>
+        <dt>
+            @Html.DisplayNameFor(model => model.Fish.Size)
+        </dt>
+        <dd>
+            @Html.DisplayFor(model => model.Fish.Size)
+        </dd>
+        <dt>
+            @Html.DisplayNameFor(model => model.Fish.Origin)
+        </dt>
+        <dd>
+            @Html.DisplayFor(model => model.Fish.Origin)
+        </dd>
+        <dt>
+            @Html.DisplayNameFor(model => model.Fish.ArrivalDate)
+        </dt>
+        <dd>
+            @Html.DisplayFor(model => model.Fish.ArrivalDate)
+        </dd>
+        <dt>
+            @Html.DisplayNameFor(model => model.Fish.LifeExpectancy)
+        </dt>
+        <dd>
+            @Html.DisplayFor(model => model.Fish.LifeExpectancy)
+        </dd>
+        <dt>
+            @Html.DisplayNameFor(model => model.Fish.Description)
+        </dt>
+        <dd>
+            @Html.DisplayFor(model => model.Fish.Description)
+        </dd>
+        <dt>
+            @Html.DisplayNameFor(model => model.Fish.Gender)
+        </dt>
+        <dd>
+            @Html.DisplayFor(model => model.Fish.Gender)
+        </dd>
+        <dt>
+            @Html.DisplayNameFor(model => model.Fish.FkAquarium)
+        </dt>
+        <dd>
+            @Html.DisplayFor(model => model.Fish.FkAquarium)
+        </dd>
+    </dl>
+    
+    <form method="post">
+        <input type="hidden" asp-for="Fish.Id" />
+        <input type="submit" value="Delete" class="btn btn-default" /> |
+        <a asp-page="./Index">Back to List</a>
+    </form>
+</div>

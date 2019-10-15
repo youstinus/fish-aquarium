@@ -1,6 +1,6 @@
 ﻿using System.Web.Mvc;
 
-namespace Zuvytes
+namespace FishAquarium
 {
     public class FilterConfig
     {

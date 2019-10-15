@@ -1,6 +1,6 @@
 ﻿using System.Web.Mvc;
 
-namespace Zuvytes.Controllers
+namespace FishAquarium.Controllers
 {
     public class HomeController : Controller
     {

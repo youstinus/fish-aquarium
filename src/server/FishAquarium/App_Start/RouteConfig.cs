@@ -1,7 +1,7 @@
 ﻿using System.Web.Mvc;
 using System.Web.Routing;
 
-namespace Zuvytes
+namespace FishAquarium
 {
     public class RouteConfig
     {

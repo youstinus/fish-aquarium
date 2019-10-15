@@ -1,0 +1,69 @@
+﻿@page
+@model FishAquariumWebApp.Pages.Aquariums.CreateModel
+
+@{
+    ViewData["Title"] = "Create";
+}
+
+<h2>Create</h2>
+
+<h4>Aquarium</h4>
+<hr />
+<div class="row">
+    <div class="col-md-4">
+        <form method="post">
+            <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+            <div class="form-group">
+                <label asp-for="Aquarium.Capacity" class="control-label"></label>
+                <input asp-for="Aquarium.Capacity" class="form-control" />
+                <span asp-validation-for="Aquarium.Capacity" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Aquarium.Mass" class="control-label"></label>
+                <input asp-for="Aquarium.Mass" class="form-control" />
+                <span asp-validation-for="Aquarium.Mass" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Aquarium.Length" class="control-label"></label>
+                <input asp-for="Aquarium.Length" class="form-control" />
+                <span asp-validation-for="Aquarium.Length" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Aquarium.Width" class="control-label"></label>
+                <input asp-for="Aquarium.Width" class="form-control" />
+                <span asp-validation-for="Aquarium.Width" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Aquarium.Heigth" class="control-label"></label>
+                <input asp-for="Aquarium.Heigth" class="form-control" />
+                <span asp-validation-for="Aquarium.Heigth" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Aquarium.GlassThickness" class="control-label"></label>
+                <input asp-for="Aquarium.GlassThickness" class="form-control" />
+                <span asp-validation-for="Aquarium.GlassThickness" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Aquarium.Id" class="control-label"></label>
+                <input asp-for="Aquarium.Id" class="form-control" />
+                <span asp-validation-for="Aquarium.Id" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Aquarium.FkPortion" class="control-label"></label>
+                <input asp-for="Aquarium.FkPortion" class="form-control" />
+                <span asp-validation-for="Aquarium.FkPortion" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <input type="submit" value="Create" class="btn btn-default" />
+            </div>
+        </form>
+    </div>
+</div>
+
+<div>
+    <a asp-page="Index">Back to List</a>
+</div>
+
+@section Scripts {
+    @{await Html.RenderPartialAsync("_ValidationScriptsPartial");}
+}

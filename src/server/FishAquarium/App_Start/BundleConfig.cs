@@ -1,6 +1,6 @@
 ﻿using System.Web.Optimization;
 
-namespace Zuvytes
+namespace FishAquarium
 {
     public class BundleConfig
     {

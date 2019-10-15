@@ -1,0 +1,61 @@
+﻿@page
+@model FishAquariumWebApp.Pages.Decorations.DetailsModel
+
+@{
+    ViewData["Title"] = "Details";
+}
+
+<h2>Details</h2>
+
+<div>
+    <h4>Decoration</h4>
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>
+            @Html.DisplayNameFor(model => model.Decoration.Manufacturer)
+        </dt>
+        <dd>
+            @Html.DisplayFor(model => model.Decoration.Manufacturer)
+        </dd>
+        <dt>
+            @Html.DisplayNameFor(model => model.Decoration.Name)
+        </dt>
+        <dd>
+            @Html.DisplayFor(model => model.Decoration.Name)
+        </dd>
+        <dt>
+            @Html.DisplayNameFor(model => model.Decoration.Color)
+        </dt>
+        <dd>
+            @Html.DisplayFor(model => model.Decoration.Color)
+        </dd>
+        <dt>
+            @Html.DisplayNameFor(model => model.Decoration.Mass)
+        </dt>
+        <dd>
+            @Html.DisplayFor(model => model.Decoration.Mass)
+        </dd>
+        <dt>
+            @Html.DisplayNameFor(model => model.Decoration.Description)
+        </dt>
+        <dd>
+            @Html.DisplayFor(model => model.Decoration.Description)
+        </dd>
+        <dt>
+            @Html.DisplayNameFor(model => model.Decoration.Material)
+        </dt>
+        <dd>
+            @Html.DisplayFor(model => model.Decoration.Material)
+        </dd>
+        <dt>
+            @Html.DisplayNameFor(model => model.Decoration.Type)
+        </dt>
+        <dd>
+            @Html.DisplayFor(model => model.Decoration.Type)
+        </dd>
+    </dl>
+</div>
+<div>
+    <a asp-page="./Edit" asp-route-id="@Model.Decoration.Id">Edit</a> |
+    <a asp-page="./Index">Back to List</a>
+</div>
