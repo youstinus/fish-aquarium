@@ -1,0 +1,30 @@
+### Scaffold models from database in new project
+
+dotnet new empty
+dotnet add package MySql.Data.EntityFrameworkCore
+dotnet add package Microsoft.EntityFrameworkCore.Design
+dotnet restore
+dotnet ef dbcontext scaffold "server=localhost;port=3306;user=root;password=;database=fish_aquarium" MySql.Data.EntityFrameworkCore -o Models -f
+
+
+drop table Allergens,
+AquariumTasks,
+AquariumUsers,
+Aquarium_inside_has_decoration,
+Aquariums,
+DecorationTypes,
+Decorations,
+EquipmentTypes,
+Equipment_put_in_aquarium,
+Equipments,
+FishGenderTypes,
+Fishes,
+Food_mixed_in_portion,
+Foods,
+ItemParameters,
+ParametersTypes,
+Portions,
+Supplement_part_of_portion,
+Supplements,
+TaskStates,
+UserTypes
