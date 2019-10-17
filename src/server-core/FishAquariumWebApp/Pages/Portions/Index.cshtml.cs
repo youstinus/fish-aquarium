@@ -15,11 +15,11 @@ namespace FishAquariumWebApp.Pages.Portions
             _context = context;
         }
 
-        public IList<Portion> Portion { get;set; }
+        public IList<Portion> Portions { get;set; }
 
         public async Task OnGetAsync()
         {
-            Portion = await _context.Portion.ToListAsync();
+            Portions = await _context.Portion.ToListAsync();
         }
     }
 }

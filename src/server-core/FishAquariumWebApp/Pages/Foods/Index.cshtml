@@ -14,37 +14,37 @@
     <thead>
         <tr>
             <th>
-                @Html.DisplayNameFor(model => model.Food[0].Name)
+                @Html.DisplayNameFor(model => model.Foods[0].Name)
             </th>
             <th>
-                @Html.DisplayNameFor(model => model.Food[0].Mass)
+                @Html.DisplayNameFor(model => model.Foods[0].Mass)
             </th>
             <th>
-                @Html.DisplayNameFor(model => model.Food[0].Calories)
+                @Html.DisplayNameFor(model => model.Foods[0].Calories)
             </th>
             <th>
-                @Html.DisplayNameFor(model => model.Food[0].Carbs)
+                @Html.DisplayNameFor(model => model.Foods[0].Carbs)
             </th>
             <th>
-                @Html.DisplayNameFor(model => model.Food[0].Proten)
+                @Html.DisplayNameFor(model => model.Foods[0].Proten)
             </th>
             <th>
-                @Html.DisplayNameFor(model => model.Food[0].Fat)
+                @Html.DisplayNameFor(model => model.Foods[0].Fat)
             </th>
             <th>
-                @Html.DisplayNameFor(model => model.Food[0].PrepManual)
+                @Html.DisplayNameFor(model => model.Foods[0].PrepManual)
             </th>
             <th>
-                @Html.DisplayNameFor(model => model.Food[0].ExpirationDate)
+                @Html.DisplayNameFor(model => model.Foods[0].ExpirationDate)
             </th>
             <th>
-                @Html.DisplayNameFor(model => model.Food[0].Allergen)
+                @Html.DisplayNameFor(model => model.Foods[0].Allergen)
             </th>
             <th></th>
         </tr>
     </thead>
     <tbody>
-@foreach (var item in Model.Food) {
+@foreach (var item in Model.Foods) {
         <tr>
             <td>
                 @Html.DisplayFor(modelItem => item.Name)

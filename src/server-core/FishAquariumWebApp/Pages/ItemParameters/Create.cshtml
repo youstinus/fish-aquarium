@@ -1,5 +1,5 @@
 ﻿@page
-@model FishAquariumWebApp.Pages.Parameters.CreateModel
+@model FishAquariumWebApp.Pages.ItemParameters.CreateModel
 
 @{
     ViewData["Title"] = "Create";
@@ -14,34 +14,34 @@
         <form method="post">
             <div asp-validation-summary="ModelOnly" class="text-danger"></div>
             <div class="form-group">
-                <label asp-for="Parameters.Name" class="control-label"></label>
-                <input asp-for="Parameters.Name" class="form-control" />
-                <span asp-validation-for="Parameters.Name" class="text-danger"></span>
+                <label asp-for="ItemParameter.Name" class="control-label"></label>
+                <input asp-for="ItemParameter.Name" class="form-control" />
+                <span asp-validation-for="ItemParameter.Name" class="text-danger"></span>
             </div>
             <div class="form-group">
-                <label asp-for="Parameters.Value" class="control-label"></label>
-                <input asp-for="Parameters.Value" class="form-control" />
-                <span asp-validation-for="Parameters.Value" class="text-danger"></span>
+                <label asp-for="ItemParameter.Value" class="control-label"></label>
+                <input asp-for="ItemParameter.Value" class="form-control" />
+                <span asp-validation-for="ItemParameter.Value" class="text-danger"></span>
             </div>
             <div class="form-group">
-                <label asp-for="Parameters.Type" class="control-label"></label>
-                <input asp-for="Parameters.Type" class="form-control" />
-                <span asp-validation-for="Parameters.Type" class="text-danger"></span>
+                <label asp-for="ItemParameter.Type" class="control-label"></label>
+                <input asp-for="ItemParameter.Type" class="form-control" />
+                <span asp-validation-for="ItemParameter.Type" class="text-danger"></span>
             </div>
             <div class="form-group">
-                <label asp-for="Parameters.Id" class="control-label"></label>
-                <input asp-for="Parameters.Id" class="form-control" />
-                <span asp-validation-for="Parameters.Id" class="text-danger"></span>
+                <label asp-for="ItemParameter.Id" class="control-label"></label>
+                <input asp-for="ItemParameter.Id" class="form-control" />
+                <span asp-validation-for="ItemParameter.Id" class="text-danger"></span>
             </div>
             <div class="form-group">
-                <label asp-for="Parameters.FkFish" class="control-label"></label>
-                <input asp-for="Parameters.FkFish" class="form-control" />
-                <span asp-validation-for="Parameters.FkFish" class="text-danger"></span>
+                <label asp-for="ItemParameter.FkFish" class="control-label"></label>
+                <input asp-for="ItemParameter.FkFish" class="form-control" />
+                <span asp-validation-for="ItemParameter.FkFish" class="text-danger"></span>
             </div>
             <div class="form-group">
-                <label asp-for="Parameters.FkAquarium" class="control-label"></label>
-                <input asp-for="Parameters.FkAquarium" class="form-control" />
-                <span asp-validation-for="Parameters.FkAquarium" class="text-danger"></span>
+                <label asp-for="ItemParameter.FkAquarium" class="control-label"></label>
+                <input asp-for="ItemParameter.FkAquarium" class="form-control" />
+                <span asp-validation-for="ItemParameter.FkAquarium" class="text-danger"></span>
             </div>
             <div class="form-group">
                 <input type="submit" value="Create" class="btn btn-default" />

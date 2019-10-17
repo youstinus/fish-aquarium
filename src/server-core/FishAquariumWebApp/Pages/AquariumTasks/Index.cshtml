@@ -1,5 +1,5 @@
 ﻿@page
-@model FishAquariumWebApp.Pages.Tasks.IndexModel
+@model FishAquariumWebApp.Pages.AquariumTasks.IndexModel
 
 @{
     ViewData["Title"] = "Index";
@@ -14,31 +14,31 @@
     <thead>
         <tr>
             <th>
-                @Html.DisplayNameFor(model => model.Tasks[0].Name)
+                @Html.DisplayNameFor(model => model.AquariumTasks[0].Name)
             </th>
             <th>
-                @Html.DisplayNameFor(model => model.Tasks[0].Duration)
+                @Html.DisplayNameFor(model => model.AquariumTasks[0].Duration)
             </th>
             <th>
-                @Html.DisplayNameFor(model => model.Tasks[0].StartTime)
+                @Html.DisplayNameFor(model => model.AquariumTasks[0].StartTime)
             </th>
             <th>
-                @Html.DisplayNameFor(model => model.Tasks[0].Description)
+                @Html.DisplayNameFor(model => model.AquariumTasks[0].Description)
             </th>
             <th>
-                @Html.DisplayNameFor(model => model.Tasks[0].State)
+                @Html.DisplayNameFor(model => model.AquariumTasks[0].State)
             </th>
             <th>
-                @Html.DisplayNameFor(model => model.Tasks[0].FkAquarium)
+                @Html.DisplayNameFor(model => model.AquariumTasks[0].FkAquarium)
             </th>
             <th>
-                @Html.DisplayNameFor(model => model.Tasks[0].FkUser)
+                @Html.DisplayNameFor(model => model.AquariumTasks[0].FkAquariumUser)
             </th>
             <th></th>
         </tr>
     </thead>
     <tbody>
-@foreach (var item in Model.Tasks) {
+@foreach (var item in Model.AquariumTasks) {
         <tr>
             <td>
                 @Html.DisplayFor(modelItem => item.Name)
@@ -59,7 +59,7 @@
                 @Html.DisplayFor(modelItem => item.FkAquarium)
             </td>
             <td>
-                @Html.DisplayFor(modelItem => item.FkUser)
+                @Html.DisplayFor(modelItem => item.FkAquariumUser)
             </td>
             <td>
                 <a asp-page="./Edit" asp-route-id="@item.Id">Edit</a> |

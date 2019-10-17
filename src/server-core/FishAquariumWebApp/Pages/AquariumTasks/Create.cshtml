@@ -1,5 +1,5 @@
 ﻿@page
-@model FishAquariumWebApp.Pages.Tasks.CreateModel
+@model FishAquariumWebApp.Pages.AquariumTasks.CreateModel
 
 @{
     ViewData["Title"] = "Create";
@@ -14,44 +14,44 @@
         <form method="post">
             <div asp-validation-summary="ModelOnly" class="text-danger"></div>
             <div class="form-group">
-                <label asp-for="Tasks.Name" class="control-label"></label>
-                <input asp-for="Tasks.Name" class="form-control" />
-                <span asp-validation-for="Tasks.Name" class="text-danger"></span>
+                <label asp-for="AquariumTask.Name" class="control-label"></label>
+                <input asp-for="AquariumTask.Name" class="form-control" />
+                <span asp-validation-for="AquariumTask.Name" class="text-danger"></span>
             </div>
             <div class="form-group">
-                <label asp-for="Tasks.Duration" class="control-label"></label>
-                <input asp-for="Tasks.Duration" class="form-control" />
-                <span asp-validation-for="Tasks.Duration" class="text-danger"></span>
+                <label asp-for="AquariumTask.Duration" class="control-label"></label>
+                <input asp-for="AquariumTask.Duration" class="form-control" />
+                <span asp-validation-for="AquariumTask.Duration" class="text-danger"></span>
             </div>
             <div class="form-group">
-                <label asp-for="Tasks.StartTime" class="control-label"></label>
-                <input asp-for="Tasks.StartTime" class="form-control" />
-                <span asp-validation-for="Tasks.StartTime" class="text-danger"></span>
+                <label asp-for="AquariumTask.StartTime" class="control-label"></label>
+                <input asp-for="AquariumTask.StartTime" class="form-control" />
+                <span asp-validation-for="AquariumTask.StartTime" class="text-danger"></span>
             </div>
             <div class="form-group">
-                <label asp-for="Tasks.Description" class="control-label"></label>
-                <input asp-for="Tasks.Description" class="form-control" />
-                <span asp-validation-for="Tasks.Description" class="text-danger"></span>
+                <label asp-for="AquariumTask.Description" class="control-label"></label>
+                <input asp-for="AquariumTask.Description" class="form-control" />
+                <span asp-validation-for="AquariumTask.Description" class="text-danger"></span>
             </div>
             <div class="form-group">
-                <label asp-for="Tasks.State" class="control-label"></label>
-                <input asp-for="Tasks.State" class="form-control" />
-                <span asp-validation-for="Tasks.State" class="text-danger"></span>
+                <label asp-for="AquariumTask.State" class="control-label"></label>
+                <input asp-for="AquariumTask.State" class="form-control" />
+                <span asp-validation-for="AquariumTask.State" class="text-danger"></span>
             </div>
             <div class="form-group">
-                <label asp-for="Tasks.Id" class="control-label"></label>
-                <input asp-for="Tasks.Id" class="form-control" />
-                <span asp-validation-for="Tasks.Id" class="text-danger"></span>
+                <label asp-for="AquariumTask.Id" class="control-label"></label>
+                <input asp-for="AquariumTask.Id" class="form-control" />
+                <span asp-validation-for="AquariumTask.Id" class="text-danger"></span>
             </div>
             <div class="form-group">
-                <label asp-for="Tasks.FkAquarium" class="control-label"></label>
-                <input asp-for="Tasks.FkAquarium" class="form-control" />
-                <span asp-validation-for="Tasks.FkAquarium" class="text-danger"></span>
+                <label asp-for="AquariumTask.FkAquarium" class="control-label"></label>
+                <input asp-for="AquariumTask.FkAquarium" class="form-control" />
+                <span asp-validation-for="AquariumTask.FkAquarium" class="text-danger"></span>
             </div>
             <div class="form-group">
-                <label asp-for="Tasks.FkUser" class="control-label"></label>
-                <input asp-for="Tasks.FkUser" class="form-control" />
-                <span asp-validation-for="Tasks.FkUser" class="text-danger"></span>
+                <label asp-for="AquariumTask.FkAquariumUser" class="control-label"></label>
+                <input asp-for="AquariumTask.FkAquariumUser" class="form-control" />
+                <span asp-validation-for="AquariumTask.FkAquariumUser" class="text-danger"></span>
             </div>
             <div class="form-group">
                 <input type="submit" value="Create" class="btn btn-default" />

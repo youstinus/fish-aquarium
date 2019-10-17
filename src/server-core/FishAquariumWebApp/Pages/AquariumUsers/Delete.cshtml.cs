@@ -1,10 +1,14 @@
-﻿using System.Threading.Tasks;
+﻿using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Threading.Tasks;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.Mvc.RazorPages;
 using Microsoft.EntityFrameworkCore;
+using FishAquariumWebApp.Configurations;
 using FishAquariumWebApp.Models;
 
-namespace FishAquariumWebApp.Pages.Users
+namespace FishAquariumWebApp.Pages.AquariumUsers
 {
     public class DeleteModel : PageModel
     {
@@ -16,7 +20,7 @@ namespace FishAquariumWebApp.Pages.Users
         }
 
         [BindProperty]
-        public User Users { get; set; }
+        public AquariumUser AquariumUser { get; set; }
 
         public async Task<IActionResult> OnGetAsync(int? id)
         {
@@ -25,9 +29,9 @@ namespace FishAquariumWebApp.Pages.Users
                 return NotFound();
             }
 
-            Users = await _context.User.FirstOrDefaultAsync(m => m.Id == id);
+            AquariumUser = await _context.AquariumUser.FirstOrDefaultAsync(m => m.Id == id);
 
-            if (Users == null)
+            if (AquariumUser == null)
             {
                 return NotFound();
             }
@@ -41,11 +45,11 @@ namespace FishAquariumWebApp.Pages.Users
                 return NotFound();
             }
 
-            Users = await _context.User.FindAsync(id);
+            AquariumUser = await _context.AquariumUser.FindAsync(id);
 
-            if (Users != null)
+            if (AquariumUser != null)
             {
-                _context.User.Remove(Users);
+                _context.AquariumUser.Remove(AquariumUser);
                 await _context.SaveChangesAsync();
             }
 

@@ -1,5 +1,5 @@
 ﻿@page
-@model FishAquariumWebApp.Pages.Parameters.DetailsModel
+@model FishAquariumWebApp.Pages.ItemParameters.DetailsModel
 
 @{
     ViewData["Title"] = "Details";
@@ -12,38 +12,38 @@
     <hr />
     <dl class="dl-horizontal">
         <dt>
-            @Html.DisplayNameFor(model => model.Parameters.Name)
+            @Html.DisplayNameFor(model => model.ItemParameter.Name)
         </dt>
         <dd>
-            @Html.DisplayFor(model => model.Parameters.Name)
+            @Html.DisplayFor(model => model.ItemParameter.Name)
         </dd>
         <dt>
-            @Html.DisplayNameFor(model => model.Parameters.Value)
+            @Html.DisplayNameFor(model => model.ItemParameter.Value)
         </dt>
         <dd>
-            @Html.DisplayFor(model => model.Parameters.Value)
+            @Html.DisplayFor(model => model.ItemParameter.Value)
         </dd>
         <dt>
-            @Html.DisplayNameFor(model => model.Parameters.Type)
+            @Html.DisplayNameFor(model => model.ItemParameter.Type)
         </dt>
         <dd>
-            @Html.DisplayFor(model => model.Parameters.Type)
+            @Html.DisplayFor(model => model.ItemParameter.Type)
         </dd>
         <dt>
-            @Html.DisplayNameFor(model => model.Parameters.FkFish)
+            @Html.DisplayNameFor(model => model.ItemParameter.FkFish)
         </dt>
         <dd>
-            @Html.DisplayFor(model => model.Parameters.FkFish)
+            @Html.DisplayFor(model => model.ItemParameter.FkFish)
         </dd>
         <dt>
-            @Html.DisplayNameFor(model => model.Parameters.FkAquarium)
+            @Html.DisplayNameFor(model => model.ItemParameter.FkAquarium)
         </dt>
         <dd>
-            @Html.DisplayFor(model => model.Parameters.FkAquarium)
+            @Html.DisplayFor(model => model.ItemParameter.FkAquarium)
         </dd>
     </dl>
 </div>
 <div>
-    <a asp-page="./Edit" asp-route-id="@Model.Parameters.Id">Edit</a> |
+    <a asp-page="./Edit" asp-route-id="@Model.ItemParameter.Id">Edit</a> |
     <a asp-page="./Index">Back to List</a>
 </div>

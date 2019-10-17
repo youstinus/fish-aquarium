@@ -14,31 +14,31 @@
     <thead>
         <tr>
             <th>
-                @Html.DisplayNameFor(model => model.Aquarium[0].Capacity)
+                @Html.DisplayNameFor(model => model.Aquariums[0].Capacity)
             </th>
             <th>
-                @Html.DisplayNameFor(model => model.Aquarium[0].Mass)
+                @Html.DisplayNameFor(model => model.Aquariums[0].Mass)
             </th>
             <th>
-                @Html.DisplayNameFor(model => model.Aquarium[0].Length)
+                @Html.DisplayNameFor(model => model.Aquariums[0].Length)
             </th>
             <th>
-                @Html.DisplayNameFor(model => model.Aquarium[0].Width)
+                @Html.DisplayNameFor(model => model.Aquariums[0].Width)
             </th>
             <th>
-                @Html.DisplayNameFor(model => model.Aquarium[0].Heigth)
+                @Html.DisplayNameFor(model => model.Aquariums[0].Heigth)
             </th>
             <th>
-                @Html.DisplayNameFor(model => model.Aquarium[0].GlassThickness)
+                @Html.DisplayNameFor(model => model.Aquariums[0].GlassThickness)
             </th>
             <th>
-                @Html.DisplayNameFor(model => model.Aquarium[0].FkPortion)
+                @Html.DisplayNameFor(model => model.Aquariums[0].FkPortion)
             </th>
             <th></th>
         </tr>
     </thead>
     <tbody>
-@foreach (var item in Model.Aquarium) {
+@foreach (var item in Model.Aquariums) {
         <tr>
             <td>
                 @Html.DisplayFor(modelItem => item.Capacity)

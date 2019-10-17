@@ -1,10 +1,11 @@
 ﻿using System.Linq;
 using System.Threading.Tasks;
+using FishAquariumWebApp.Models;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.Mvc.RazorPages;
 using Microsoft.EntityFrameworkCore;
 
-namespace FishAquariumWebApp.Pages.Tasks
+namespace FishAquariumWebApp.Pages.AquariumTasks
 {
     public class EditModel : PageModel
     {
@@ -16,7 +17,7 @@ namespace FishAquariumWebApp.Pages.Tasks
         }
 
         [BindProperty]
-        public Models.Tasks Tasks { get; set; }
+        public AquariumTask AquariumTask { get; set; }
 
         public async Task<IActionResult> OnGetAsync(int? id)
         {
@@ -25,9 +26,9 @@ namespace FishAquariumWebApp.Pages.Tasks
                 return NotFound();
             }
 
-            Tasks = await _context.Tasks.FirstOrDefaultAsync(m => m.Id == id);
+            AquariumTask = await _context.AquariumTask.FirstOrDefaultAsync(m => m.Id == id);
 
-            if (Tasks == null)
+            if (AquariumTask == null)
             {
                 return NotFound();
             }
@@ -41,7 +42,7 @@ namespace FishAquariumWebApp.Pages.Tasks
                 return Page();
             }
 
-            _context.Attach(Tasks).State = EntityState.Modified;
+            _context.Attach(AquariumTask).State = EntityState.Modified;
 
             try
             {
@@ -49,7 +50,7 @@ namespace FishAquariumWebApp.Pages.Tasks
             }
             catch (DbUpdateConcurrencyException)
             {
-                if (!TasksExists(Tasks.Id))
+                if (!TasksExists(AquariumTask.Id))
                 {
                     return NotFound();
                 }
@@ -64,7 +65,7 @@ namespace FishAquariumWebApp.Pages.Tasks
 
         private bool TasksExists(int id)
         {
-            return _context.Tasks.Any(e => e.Id == id);
+            return _context.AquariumTask.Any(e => e.Id == id);
         }
     }
 }

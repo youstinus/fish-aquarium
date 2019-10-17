@@ -1,9 +1,10 @@
 ﻿using System.Collections.Generic;
 using System.Threading.Tasks;
+using FishAquariumWebApp.Models;
 using Microsoft.AspNetCore.Mvc.RazorPages;
 using Microsoft.EntityFrameworkCore;
 
-namespace FishAquariumWebApp.Pages.Parameters
+namespace FishAquariumWebApp.Pages.ItemParameters
 {
     public class IndexModel : PageModel
     {
@@ -14,11 +15,11 @@ namespace FishAquariumWebApp.Pages.Parameters
             _context = context;
         }
 
-        public IList<Models.Parameters> Parameters { get;set; }
+        public IList<ItemParameter> ItemParameters { get;set; }
 
         public async Task OnGetAsync()
         {
-            Parameters = await _context.Parameters.ToListAsync();
+            ItemParameters = await _context.ItemParameter.ToListAsync();
         }
     }
 }
