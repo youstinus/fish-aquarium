@@ -2,7 +2,7 @@
 
 namespace FishAquariumWebApp.Models
 {
-    public class User
+    public class AquariumUser
     {
         public string FirstName { get; set; }
         public string LastName { get; set; }

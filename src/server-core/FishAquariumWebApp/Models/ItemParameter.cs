@@ -1,6 +1,6 @@
 ﻿namespace FishAquariumWebApp.Models
 {
-    public class Parameters
+    public class ItemParameter
     {
         public string Name { get; set; }
         public string Value { get; set; }
