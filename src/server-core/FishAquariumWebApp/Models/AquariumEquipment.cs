@@ -1,8 +1,8 @@
 ﻿namespace FishAquariumWebApp.Models
 {
-    public class AquariumInsideHasDecoration
+    public class AquariumEquipment
     {
-        public int FkDecoration { get; set; }
         public int FkAquarium { get; set; }
+        public int FkEquipment { get; set; }
     }
 }

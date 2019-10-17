@@ -6,5 +6,7 @@ namespace FishAquariumWebApp.Models
     {
         public DateTime? PreparationDate { get; set; }
         public int Id { get; set; }
+        public int? FkFood { get; set; }
+        public int? FkSupplement { get; set; }
     }
 }

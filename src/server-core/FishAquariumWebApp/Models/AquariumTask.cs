@@ -2,7 +2,7 @@
 
 namespace FishAquariumWebApp.Models
 {
-    public class Tasks
+    public class AquariumTask
     {
         public string Name { get; set; }
         public double? Duration { get; set; }
@@ -11,6 +11,6 @@ namespace FishAquariumWebApp.Models
         public int? State { get; set; }
         public int Id { get; set; }
         public int? FkAquarium { get; set; }
-        public int? FkUser { get; set; }
+        public int? FkAquariumUser { get; set; }
     }
 }

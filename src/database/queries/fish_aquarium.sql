@@ -67,7 +67,6 @@ INSERT INTO EquipmentTypes(Id, name) VALUES(5, 'Heater');
 
 CREATE TABLE FishGenderTypes
 (
-	Male varchar (255),
 	Id integer NOT NULL AUTO_INCREMENT,
 	name char (12) NOT NULL,
 	PRIMARY KEY(Id)
