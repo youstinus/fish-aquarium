@@ -1,4 +1,4 @@
-﻿namespace FishAquariumWebApp.App_Start
+﻿namespace FishAquariumWebApp
 {
     public class RouteConfig
     {

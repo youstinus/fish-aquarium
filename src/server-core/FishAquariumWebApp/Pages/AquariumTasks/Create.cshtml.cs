@@ -1,8 +1,9 @@
 ﻿using System.Threading.Tasks;
+using FishAquariumWebApp.Models;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.Mvc.RazorPages;
 
-namespace FishAquariumWebApp.Pages.Tasks
+namespace FishAquariumWebApp.Pages.AquariumTasks
 {
     public class CreateModel : PageModel
     {
@@ -19,7 +20,7 @@ namespace FishAquariumWebApp.Pages.Tasks
         }
 
         [BindProperty]
-        public Models.Tasks Tasks { get; set; }
+        public AquariumTask AquariumTask { get; set; }
 
         public async Task<IActionResult> OnPostAsync()
         {
@@ -28,7 +29,7 @@ namespace FishAquariumWebApp.Pages.Tasks
                 return Page();
             }
 
-            _context.Tasks.Add(Tasks);
+            _context.AquariumTask.Add(AquariumTask);
             await _context.SaveChangesAsync();
 
             return RedirectToPage("./Index");

@@ -1,11 +1,15 @@
-﻿using System.Linq;
+﻿using System;
+using System.Collections.Generic;
+using System.Linq;
 using System.Threading.Tasks;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.Mvc.RazorPages;
+using Microsoft.AspNetCore.Mvc.Rendering;
 using Microsoft.EntityFrameworkCore;
+using FishAquariumWebApp.Configurations;
 using FishAquariumWebApp.Models;
 
-namespace FishAquariumWebApp.Pages.Users
+namespace FishAquariumWebApp.Pages.AquariumUsers
 {
     public class EditModel : PageModel
     {
@@ -17,7 +21,7 @@ namespace FishAquariumWebApp.Pages.Users
         }
 
         [BindProperty]
-        public User Users { get; set; }
+        public AquariumUser AquariumUser { get; set; }
 
         public async Task<IActionResult> OnGetAsync(int? id)
         {
@@ -26,9 +30,9 @@ namespace FishAquariumWebApp.Pages.Users
                 return NotFound();
             }
 
-            Users = await _context.User.FirstOrDefaultAsync(m => m.Id == id);
+            AquariumUser = await _context.AquariumUser.FirstOrDefaultAsync(m => m.Id == id);
 
-            if (Users == null)
+            if (AquariumUser == null)
             {
                 return NotFound();
             }
@@ -42,7 +46,7 @@ namespace FishAquariumWebApp.Pages.Users
                 return Page();
             }
 
-            _context.Attach(Users).State = EntityState.Modified;
+            _context.Attach(AquariumUser).State = EntityState.Modified;
 
             try
             {
@@ -50,7 +54,7 @@ namespace FishAquariumWebApp.Pages.Users
             }
             catch (DbUpdateConcurrencyException)
             {
-                if (!UserExists(Users.Id))
+                if (!AquariumUserExists(AquariumUser.Id))
                 {
                     return NotFound();
                 }
@@ -63,9 +67,9 @@ namespace FishAquariumWebApp.Pages.Users
             return RedirectToPage("./Index");
         }
 
-        private bool UserExists(int id)
+        private bool AquariumUserExists(int id)
         {
-            return _context.User.Any(e => e.Id == id);
+            return _context.AquariumUser.Any(e => e.Id == id);
         }
     }
 }

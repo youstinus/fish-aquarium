@@ -15,11 +15,11 @@ namespace FishAquariumWebApp.Pages.Equipments
             _context = context;
         }
 
-        public IList<Equipment> Equipment { get;set; }
+        public IList<Equipment> Equipments { get;set; }
 
         public async Task OnGetAsync()
         {
-            Equipment = await _context.Equipment.ToListAsync();
+            Equipments = await _context.Equipment.ToListAsync();
         }
     }
 }

@@ -1,0 +1,7 @@
+Idėti enum'us vietoj int'ų modeliuose
+Nereikia sukuriant Id nurodyti
+Rodyti Id details, delete, edit puslapiuose
+Passwordo nerodyti
+Sudėti validacijas kokie duomenys reikalingi
+Prieš sukuriant patikrinti
+Gaudyti exceptionus

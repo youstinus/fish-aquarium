@@ -1,4 +1,5 @@
-﻿@model FishAquariumWebApp.Models.User
+﻿@page
+@model FishAquariumWebApp.Pages.AquariumUsers.EditModel
 
 @{
     ViewData["Title"] = "Edit";
@@ -6,53 +7,53 @@
 
 <h2>Edit</h2>
 
-<h4>User</h4>
+<h4>AquariumUser</h4>
 <hr />
 <div class="row">
     <div class="col-md-4">
-        <form asp-action="Edit">
+        <form method="post">
             <div asp-validation-summary="ModelOnly" class="text-danger"></div>
             <div class="form-group">
-                <label asp-for="FirstName" class="control-label"></label>
-                <input asp-for="FirstName" class="form-control" />
-                <span asp-validation-for="FirstName" class="text-danger"></span>
+                <label asp-for="AquariumUser.FirstName" class="control-label"></label>
+                <input asp-for="AquariumUser.FirstName" class="form-control" />
+                <span asp-validation-for="AquariumUser.FirstName" class="text-danger"></span>
             </div>
             <div class="form-group">
-                <label asp-for="LastName" class="control-label"></label>
-                <input asp-for="LastName" class="form-control" />
-                <span asp-validation-for="LastName" class="text-danger"></span>
+                <label asp-for="AquariumUser.LastName" class="control-label"></label>
+                <input asp-for="AquariumUser.LastName" class="form-control" />
+                <span asp-validation-for="AquariumUser.LastName" class="text-danger"></span>
             </div>
             <div class="form-group">
-                <label asp-for="BirthDate" class="control-label"></label>
-                <input asp-for="BirthDate" class="form-control" />
-                <span asp-validation-for="BirthDate" class="text-danger"></span>
+                <label asp-for="AquariumUser.BirthDate" class="control-label"></label>
+                <input asp-for="AquariumUser.BirthDate" class="form-control" />
+                <span asp-validation-for="AquariumUser.BirthDate" class="text-danger"></span>
             </div>
             <div class="form-group">
-                <label asp-for="RegistrationDate" class="control-label"></label>
-                <input asp-for="RegistrationDate" class="form-control" />
-                <span asp-validation-for="RegistrationDate" class="text-danger"></span>
+                <label asp-for="AquariumUser.RegistrationDate" class="control-label"></label>
+                <input asp-for="AquariumUser.RegistrationDate" class="form-control" />
+                <span asp-validation-for="AquariumUser.RegistrationDate" class="text-danger"></span>
             </div>
             <div class="form-group">
-                <label asp-for="Email" class="control-label"></label>
-                <input asp-for="Email" class="form-control" />
-                <span asp-validation-for="Email" class="text-danger"></span>
+                <label asp-for="AquariumUser.Email" class="control-label"></label>
+                <input asp-for="AquariumUser.Email" class="form-control" />
+                <span asp-validation-for="AquariumUser.Email" class="text-danger"></span>
             </div>
             <div class="form-group">
-                <label asp-for="Password" class="control-label"></label>
-                <input asp-for="Password" class="form-control" />
-                <span asp-validation-for="Password" class="text-danger"></span>
+                <label asp-for="AquariumUser.Password" class="control-label"></label>
+                <input asp-for="AquariumUser.Password" class="form-control" />
+                <span asp-validation-for="AquariumUser.Password" class="text-danger"></span>
             </div>
             <div class="form-group">
-                <label asp-for="Code" class="control-label"></label>
-                <input asp-for="Code" class="form-control" />
-                <span asp-validation-for="Code" class="text-danger"></span>
+                <label asp-for="AquariumUser.Code" class="control-label"></label>
+                <input asp-for="AquariumUser.Code" class="form-control" />
+                <span asp-validation-for="AquariumUser.Code" class="text-danger"></span>
             </div>
             <div class="form-group">
-                <label asp-for="Type" class="control-label"></label>
-                <input asp-for="Type" class="form-control" />
-                <span asp-validation-for="Type" class="text-danger"></span>
+                <label asp-for="AquariumUser.Type" class="control-label"></label>
+                <input asp-for="AquariumUser.Type" class="form-control" />
+                <span asp-validation-for="AquariumUser.Type" class="text-danger"></span>
             </div>
-            <input type="hidden" asp-for="Id" />
+            <input type="hidden" asp-for="AquariumUser.Id" />
             <div class="form-group">
                 <input type="submit" value="Save" class="btn btn-default" />
             </div>
@@ -61,7 +62,7 @@
 </div>
 
 <div>
-    <a asp-action="Index">Back to List</a>
+    <a asp-page="./Index">Back to List</a>
 </div>
 
 @section Scripts {

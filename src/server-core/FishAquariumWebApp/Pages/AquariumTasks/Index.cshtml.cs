@@ -1,9 +1,10 @@
 ﻿using System.Collections.Generic;
 using System.Threading.Tasks;
+using FishAquariumWebApp.Models;
 using Microsoft.AspNetCore.Mvc.RazorPages;
 using Microsoft.EntityFrameworkCore;
 
-namespace FishAquariumWebApp.Pages.Tasks
+namespace FishAquariumWebApp.Pages.AquariumTasks
 {
     public class IndexModel : PageModel
     {
@@ -14,11 +15,11 @@ namespace FishAquariumWebApp.Pages.Tasks
             _context = context;
         }
 
-        public IList<Models.Tasks> Tasks { get;set; }
+        public IList<AquariumTask> AquariumTasks { get;set; }
 
         public async Task OnGetAsync()
         {
-            Tasks = await _context.Tasks.ToListAsync();
+            AquariumTasks = await _context.AquariumTask.ToListAsync();
         }
     }
 }

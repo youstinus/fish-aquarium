@@ -15,11 +15,11 @@ namespace FishAquariumWebApp.Pages.Aquariums
             _context = context;
         }
 
-        public IList<Aquarium> Aquarium { get;set; }
+        public IList<Aquarium> Aquariums { get;set; }
 
         public async Task OnGetAsync()
         {
-            Aquarium = await _context.Aquarium.ToListAsync();
+            Aquariums = await _context.Aquarium.ToListAsync();
         }
     }
 }

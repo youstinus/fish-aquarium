@@ -1,9 +1,14 @@
-﻿using System.Threading.Tasks;
+﻿using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Threading.Tasks;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.Mvc.RazorPages;
+using Microsoft.AspNetCore.Mvc.Rendering;
+using FishAquariumWebApp.Configurations;
 using FishAquariumWebApp.Models;
 
-namespace FishAquariumWebApp.Pages.Users
+namespace FishAquariumWebApp.Pages.AquariumUsers
 {
     public class CreateModel : PageModel
     {
@@ -20,7 +25,7 @@ namespace FishAquariumWebApp.Pages.Users
         }
 
         [BindProperty]
-        public User Users { get; set; }
+        public AquariumUser AquariumUser { get; set; }
 
         public async Task<IActionResult> OnPostAsync()
         {
@@ -29,7 +34,7 @@ namespace FishAquariumWebApp.Pages.Users
                 return Page();
             }
 
-            _context.User.Add(Users);
+            _context.AquariumUser.Add(AquariumUser);
             await _context.SaveChangesAsync();
 
             return RedirectToPage("./Index");

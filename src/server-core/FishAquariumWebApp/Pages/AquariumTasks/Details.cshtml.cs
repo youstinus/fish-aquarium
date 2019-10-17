@@ -1,9 +1,10 @@
 ﻿using System.Threading.Tasks;
+using FishAquariumWebApp.Models;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.Mvc.RazorPages;
 using Microsoft.EntityFrameworkCore;
 
-namespace FishAquariumWebApp.Pages.Tasks
+namespace FishAquariumWebApp.Pages.AquariumTasks
 {
     public class DetailsModel : PageModel
     {
@@ -14,7 +15,7 @@ namespace FishAquariumWebApp.Pages.Tasks
             _context = context;
         }
 
-        public Models.Tasks Tasks { get; set; }
+        public AquariumTask AquariumTask { get; set; }
 
         public async Task<IActionResult> OnGetAsync(int? id)
         {
@@ -23,9 +24,9 @@ namespace FishAquariumWebApp.Pages.Tasks
                 return NotFound();
             }
 
-            Tasks = await _context.Tasks.FirstOrDefaultAsync(m => m.Id == id);
+            AquariumTask = await _context.AquariumTask.FirstOrDefaultAsync(m => m.Id == id);
 
-            if (Tasks == null)
+            if (AquariumTask == null)
             {
                 return NotFound();
             }

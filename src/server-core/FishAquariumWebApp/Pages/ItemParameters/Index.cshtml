@@ -1,5 +1,5 @@
 ﻿@page
-@model FishAquariumWebApp.Pages.Parameters.IndexModel
+@model FishAquariumWebApp.Pages.ItemParameters.IndexModel
 
 @{
     ViewData["Title"] = "Index";
@@ -14,25 +14,25 @@
     <thead>
         <tr>
             <th>
-                @Html.DisplayNameFor(model => model.Parameters[0].Name)
+                @Html.DisplayNameFor(model => model.ItemParameters[0].Name)
             </th>
             <th>
-                @Html.DisplayNameFor(model => model.Parameters[0].Value)
+                @Html.DisplayNameFor(model => model.ItemParameters[0].Value)
             </th>
             <th>
-                @Html.DisplayNameFor(model => model.Parameters[0].Type)
+                @Html.DisplayNameFor(model => model.ItemParameters[0].Type)
             </th>
             <th>
-                @Html.DisplayNameFor(model => model.Parameters[0].FkFish)
+                @Html.DisplayNameFor(model => model.ItemParameters[0].FkFish)
             </th>
             <th>
-                @Html.DisplayNameFor(model => model.Parameters[0].FkAquarium)
+                @Html.DisplayNameFor(model => model.ItemParameters[0].FkAquarium)
             </th>
             <th></th>
         </tr>
     </thead>
     <tbody>
-@foreach (var item in Model.Parameters) {
+@foreach (var item in Model.ItemParameters) {
         <tr>
             <td>
                 @Html.DisplayFor(modelItem => item.Name)

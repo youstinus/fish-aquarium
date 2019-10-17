@@ -1,5 +1,5 @@
 ﻿@page
-@model FishAquariumWebApp.Pages.Tasks.DetailsModel
+@model FishAquariumWebApp.Pages.AquariumTasks.DetailsModel
 
 @{
     ViewData["Title"] = "Details";
@@ -12,50 +12,50 @@
     <hr />
     <dl class="dl-horizontal">
         <dt>
-            @Html.DisplayNameFor(model => model.Tasks.Name)
+            @Html.DisplayNameFor(model => model.AquariumTask.Name)
         </dt>
         <dd>
-            @Html.DisplayFor(model => model.Tasks.Name)
+            @Html.DisplayFor(model => model.AquariumTask.Name)
         </dd>
         <dt>
-            @Html.DisplayNameFor(model => model.Tasks.Duration)
+            @Html.DisplayNameFor(model => model.AquariumTask.Duration)
         </dt>
         <dd>
-            @Html.DisplayFor(model => model.Tasks.Duration)
+            @Html.DisplayFor(model => model.AquariumTask.Duration)
         </dd>
         <dt>
-            @Html.DisplayNameFor(model => model.Tasks.StartTime)
+            @Html.DisplayNameFor(model => model.AquariumTask.StartTime)
         </dt>
         <dd>
-            @Html.DisplayFor(model => model.Tasks.StartTime)
+            @Html.DisplayFor(model => model.AquariumTask.StartTime)
         </dd>
         <dt>
-            @Html.DisplayNameFor(model => model.Tasks.Description)
+            @Html.DisplayNameFor(model => model.AquariumTask.Description)
         </dt>
         <dd>
-            @Html.DisplayFor(model => model.Tasks.Description)
+            @Html.DisplayFor(model => model.AquariumTask.Description)
         </dd>
         <dt>
-            @Html.DisplayNameFor(model => model.Tasks.State)
+            @Html.DisplayNameFor(model => model.AquariumTask.State)
         </dt>
         <dd>
-            @Html.DisplayFor(model => model.Tasks.State)
+            @Html.DisplayFor(model => model.AquariumTask.State)
         </dd>
         <dt>
-            @Html.DisplayNameFor(model => model.Tasks.FkAquarium)
+            @Html.DisplayNameFor(model => model.AquariumTask.FkAquarium)
         </dt>
         <dd>
-            @Html.DisplayFor(model => model.Tasks.FkAquarium)
+            @Html.DisplayFor(model => model.AquariumTask.FkAquarium)
         </dd>
         <dt>
-            @Html.DisplayNameFor(model => model.Tasks.FkUser)
+            @Html.DisplayNameFor(model => model.AquariumTask.FkAquariumUser)
         </dt>
         <dd>
-            @Html.DisplayFor(model => model.Tasks.FkUser)
+            @Html.DisplayFor(model => model.AquariumTask.FkAquariumUser)
         </dd>
     </dl>
 </div>
 <div>
-    <a asp-page="./Edit" asp-route-id="@Model.Tasks.Id">Edit</a> |
+    <a asp-page="./Edit" asp-route-id="@Model.AquariumTask.Id">Edit</a> |
     <a asp-page="./Index">Back to List</a>
 </div>

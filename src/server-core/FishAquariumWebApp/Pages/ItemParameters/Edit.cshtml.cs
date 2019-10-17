@@ -1,10 +1,11 @@
 ﻿using System.Linq;
 using System.Threading.Tasks;
+using FishAquariumWebApp.Models;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.Mvc.RazorPages;
 using Microsoft.EntityFrameworkCore;
 
-namespace FishAquariumWebApp.Pages.Parameters
+namespace FishAquariumWebApp.Pages.ItemParameters
 {
     public class EditModel : PageModel
     {
@@ -16,7 +17,7 @@ namespace FishAquariumWebApp.Pages.Parameters
         }
 
         [BindProperty]
-        public Models.Parameters Parameters { get; set; }
+        public ItemParameter ItemParameter { get; set; }
 
         public async Task<IActionResult> OnGetAsync(int? id)
         {
@@ -25,9 +26,9 @@ namespace FishAquariumWebApp.Pages.Parameters
                 return NotFound();
             }
 
-            Parameters = await _context.Parameters.FirstOrDefaultAsync(m => m.Id == id);
+            ItemParameter = await _context.ItemParameter.FirstOrDefaultAsync(m => m.Id == id);
 
-            if (Parameters == null)
+            if (ItemParameter == null)
             {
                 return NotFound();
             }
@@ -41,7 +42,7 @@ namespace FishAquariumWebApp.Pages.Parameters
                 return Page();
             }
 
-            _context.Attach(Parameters).State = EntityState.Modified;
+            _context.Attach(ItemParameter).State = EntityState.Modified;
 
             try
             {
@@ -49,7 +50,7 @@ namespace FishAquariumWebApp.Pages.Parameters
             }
             catch (DbUpdateConcurrencyException)
             {
-                if (!ParametersExists(Parameters.Id))
+                if (!ParametersExists(ItemParameter.Id))
                 {
                     return NotFound();
                 }
@@ -64,7 +65,7 @@ namespace FishAquariumWebApp.Pages.Parameters
 
         private bool ParametersExists(int id)
         {
-            return _context.Parameters.Any(e => e.Id == id);
+            return _context.ItemParameter.Any(e => e.Id == id);
         }
     }
 }

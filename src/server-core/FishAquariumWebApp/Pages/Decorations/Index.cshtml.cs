@@ -15,11 +15,11 @@ namespace FishAquariumWebApp.Pages.Decorations
             _context = context;
         }
 
-        public IList<Decoration> Decoration { get;set; }
+        public IList<Decoration> Decorations { get;set; }
 
         public async Task OnGetAsync()
         {
-            Decoration = await _context.Decoration.ToListAsync();
+            Decorations = await _context.Decoration.ToListAsync();
         }
     }
 }

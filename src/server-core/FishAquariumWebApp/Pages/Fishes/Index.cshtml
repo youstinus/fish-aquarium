@@ -14,37 +14,37 @@
     <thead>
         <tr>
             <th>
-                @Html.DisplayNameFor(model => model.Fish[0].Species)
+                @Html.DisplayNameFor(model => model.Fishes[0].Species)
             </th>
             <th>
-                @Html.DisplayNameFor(model => model.Fish[0].Mass)
+                @Html.DisplayNameFor(model => model.Fishes[0].Mass)
             </th>
             <th>
-                @Html.DisplayNameFor(model => model.Fish[0].Size)
+                @Html.DisplayNameFor(model => model.Fishes[0].Size)
             </th>
             <th>
-                @Html.DisplayNameFor(model => model.Fish[0].Origin)
+                @Html.DisplayNameFor(model => model.Fishes[0].Origin)
             </th>
             <th>
-                @Html.DisplayNameFor(model => model.Fish[0].ArrivalDate)
+                @Html.DisplayNameFor(model => model.Fishes[0].ArrivalDate)
             </th>
             <th>
-                @Html.DisplayNameFor(model => model.Fish[0].LifeExpectancy)
+                @Html.DisplayNameFor(model => model.Fishes[0].LifeExpectancy)
             </th>
             <th>
-                @Html.DisplayNameFor(model => model.Fish[0].Description)
+                @Html.DisplayNameFor(model => model.Fishes[0].Description)
             </th>
             <th>
-                @Html.DisplayNameFor(model => model.Fish[0].Gender)
+                @Html.DisplayNameFor(model => model.Fishes[0].Gender)
             </th>
             <th>
-                @Html.DisplayNameFor(model => model.Fish[0].FkAquarium)
+                @Html.DisplayNameFor(model => model.Fishes[0].FkAquarium)
             </th>
             <th></th>
         </tr>
     </thead>
     <tbody>
-@foreach (var item in Model.Fish) {
+@foreach (var item in Model.Fishes) {
         <tr>
             <td>
                 @Html.DisplayFor(modelItem => item.Species)

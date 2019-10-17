@@ -234,7 +234,7 @@ namespace FishAquariumWebApp.Pages.Foods
             WriteLiteral("\r\n        </dd>\r\n    </dl>\r\n</div>\r\n<div>\r\n    ");
             EndContext();
             BeginContext(1844, 59, false);
-            __tagHelperExecutionContext = __tagHelperScopeManager.Begin("a", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "b2059dd98602478ba68c8acf5f6432f9", async() => {
+            __tagHelperExecutionContext = __tagHelperScopeManager.Begin("a", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "ed6e37e08abd4f48b9ea37af06d10249", async() => {
                 BeginContext(1895, 4, true);
                 WriteLiteral("Edit");
                 EndContext();
@@ -269,7 +269,7 @@ namespace FishAquariumWebApp.Pages.Foods
             WriteLiteral(" |\r\n    ");
             EndContext();
             BeginContext(1911, 38, false);
-            __tagHelperExecutionContext = __tagHelperScopeManager.Begin("a", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "206364758abe41c2851cc6c88be96566", async() => {
+            __tagHelperExecutionContext = __tagHelperScopeManager.Begin("a", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "49c8478376444aafa3dc86f15a0833a7", async() => {
                 BeginContext(1933, 12, true);
                 WriteLiteral("Back to List");
                 EndContext();
