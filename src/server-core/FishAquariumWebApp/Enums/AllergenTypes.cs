@@ -1,4 +1,4 @@
-﻿namespace FishAquariumWebApp.Models
+﻿namespace FishAquariumWebApp.Enums
 {
     public enum AllergenTypes
     {
