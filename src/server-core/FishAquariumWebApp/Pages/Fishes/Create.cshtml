@@ -1,4 +1,5 @@
 ﻿@page
+@using FishAquariumWebApp.Enums
 @model FishAquariumWebApp.Pages.Fishes.CreateModel
 
 @{
@@ -50,17 +51,17 @@
             </div>
             <div class="form-group">
                 <label asp-for="Fish.Gender" class="control-label"></label>
-                <input asp-for="Fish.Gender" class="form-control" />
+                <select asp-for="Fish.Gender" asp-items="Html.GetEnumSelectList<FishGenderTypes>()"></select>
                 <span asp-validation-for="Fish.Gender" class="text-danger"></span>
             </div>
-            <div class="form-group">
+            @*<div class="form-group">
                 <label asp-for="Fish.Id" class="control-label"></label>
                 <input asp-for="Fish.Id" class="form-control" />
                 <span asp-validation-for="Fish.Id" class="text-danger"></span>
-            </div>
+            </div>*@
             <div class="form-group">
                 <label asp-for="Fish.FkAquarium" class="control-label"></label>
-                <input asp-for="Fish.FkAquarium" class="form-control" />
+                <select asp-for="Fish.FkAquarium" asp-items="@(Model.GetAquariumSelectListItems())"></select>
                 <span asp-validation-for="Fish.FkAquarium" class="text-danger"></span>
             </div>
             <div class="form-group">

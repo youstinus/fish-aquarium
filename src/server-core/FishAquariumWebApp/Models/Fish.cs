@@ -1,4 +1,5 @@
 ﻿using System;
+using FishAquariumWebApp.Enums;
 
 namespace FishAquariumWebApp.Models
 {
@@ -11,7 +12,7 @@ namespace FishAquariumWebApp.Models
         public DateTime? ArrivalDate { get; set; }
         public int? LifeExpectancy { get; set; }
         public string Description { get; set; }
-        public int? Gender { get; set; }
+        public FishGenderTypes Gender { get; set; }
         public int Id { get; set; }
         public int? FkAquarium { get; set; }
     }

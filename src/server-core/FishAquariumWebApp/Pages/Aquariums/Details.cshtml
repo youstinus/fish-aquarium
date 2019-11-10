@@ -1,4 +1,5 @@
 ﻿@page
+@using FishAquariumWebApp.Models
 @model FishAquariumWebApp.Pages.Aquariums.DetailsModel
 
 @{
@@ -12,40 +13,46 @@
     <hr />
     <dl class="dl-horizontal">
         <dt>
+            @Html.DisplayNameFor(model => model.Aquarium.Id)
+        </dt>
+        <dd>
+            @Html.DisplayFor(model => model.Aquarium.Id)
+        </dd>
+        <dt>
             @Html.DisplayNameFor(model => model.Aquarium.Capacity)
         </dt>
         <dd>
-            @Html.DisplayFor(model => model.Aquarium.Capacity)
+            @Html.DisplayFor(model => model.Aquarium.Capacity) l
         </dd>
         <dt>
             @Html.DisplayNameFor(model => model.Aquarium.Mass)
         </dt>
         <dd>
-            @Html.DisplayFor(model => model.Aquarium.Mass)
+            @Html.DisplayFor(model => model.Aquarium.Mass) kg
         </dd>
         <dt>
             @Html.DisplayNameFor(model => model.Aquarium.Length)
         </dt>
         <dd>
-            @Html.DisplayFor(model => model.Aquarium.Length)
+            @Html.DisplayFor(model => model.Aquarium.Length) cm
         </dd>
         <dt>
             @Html.DisplayNameFor(model => model.Aquarium.Width)
         </dt>
         <dd>
-            @Html.DisplayFor(model => model.Aquarium.Width)
+            @Html.DisplayFor(model => model.Aquarium.Width) cm
         </dd>
         <dt>
             @Html.DisplayNameFor(model => model.Aquarium.Heigth)
         </dt>
         <dd>
-            @Html.DisplayFor(model => model.Aquarium.Heigth)
+            @Html.DisplayFor(model => model.Aquarium.Heigth) cm
         </dd>
         <dt>
             @Html.DisplayNameFor(model => model.Aquarium.GlassThickness)
         </dt>
         <dd>
-            @Html.DisplayFor(model => model.Aquarium.GlassThickness)
+            @Html.DisplayFor(model => model.Aquarium.GlassThickness) mm
         </dd>
         <dt>
             @Html.DisplayNameFor(model => model.Aquarium.FkPortion)
@@ -54,6 +61,87 @@
             @Html.DisplayFor(model => model.Aquarium.FkPortion)
         </dd>
     </dl>
+
+    <h4>Fishes</h4>
+    <table class="table">
+        <thead>
+            <tr>
+                <th>
+                    @Html.DisplayNameFor(model => model.Fishes[0].Id)
+                </th>
+                <th>
+                    @Html.DisplayNameFor(model => model.Fishes[0].Species)
+                </th>
+                <th>
+                    @Html.DisplayNameFor(model => model.Fishes[0].Mass)
+                </th>
+                <th>
+                    @Html.DisplayNameFor(model => model.Fishes[0].Size)
+                </th>
+                <th>
+                    @Html.DisplayNameFor(model => model.Fishes[0].Origin)
+                </th>
+                <th>
+                    @Html.DisplayNameFor(model => model.Fishes[0].ArrivalDate)
+                </th>
+                <th>
+                    @Html.DisplayNameFor(model => model.Fishes[0].LifeExpectancy)
+                </th>
+                <th>
+                    @Html.DisplayNameFor(model => model.Fishes[0].Description)
+                </th>
+                <th>
+                    @Html.DisplayNameFor(model => model.Fishes[0].Gender)
+                </th>
+                <th>
+                    @Html.DisplayNameFor(model => model.Fishes[0].FkAquarium)
+                </th>
+                <th></th>
+            </tr>
+        </thead>
+        <tbody>
+            @foreach (var item in Model.Fishes)
+            {
+                <tr>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.Id)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.Species)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.Mass) g
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.Size) mm
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.Origin)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.ArrivalDate)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.LifeExpectancy) h
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.Description)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.Gender)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.FkAquarium)
+                    </td>
+                    <td>
+                        <a asp-page="/Fishes/Edit" asp-route-id="@item.Id">Edit</a> |
+                        <a asp-page="/Fishes/Details" asp-route-id="@item.Id">Details</a> |
+                        <a asp-page="/Fishes/Delete" asp-route-id="@item.Id">Delete</a>
+                    </td>
+                </tr>
+            }
+        </tbody>
+    </table>
 </div>
 <div>
     <a asp-page="./Edit" asp-route-id="@Model.Aquarium.Id">Edit</a> |

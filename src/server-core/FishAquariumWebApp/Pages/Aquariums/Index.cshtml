@@ -10,9 +10,13 @@
 <p>
     <a asp-page="Create">Create New</a>
 </p>
+
 <table class="table">
     <thead>
         <tr>
+            <th>
+                @Html.DisplayNameFor(model => model.Aquariums[0].Id)
+            </th>
             <th>
                 @Html.DisplayNameFor(model => model.Aquariums[0].Capacity)
             </th>
@@ -38,35 +42,39 @@
         </tr>
     </thead>
     <tbody>
-@foreach (var item in Model.Aquariums) {
-        <tr>
-            <td>
-                @Html.DisplayFor(modelItem => item.Capacity)
-            </td>
-            <td>
-                @Html.DisplayFor(modelItem => item.Mass)
-            </td>
-            <td>
-                @Html.DisplayFor(modelItem => item.Length)
-            </td>
-            <td>
-                @Html.DisplayFor(modelItem => item.Width)
-            </td>
-            <td>
-                @Html.DisplayFor(modelItem => item.Heigth)
-            </td>
-            <td>
-                @Html.DisplayFor(modelItem => item.GlassThickness)
-            </td>
-            <td>
-                @Html.DisplayFor(modelItem => item.FkPortion)
-            </td>
-            <td>
-                <a asp-page="./Edit" asp-route-id="@item.Id">Edit</a> |
-                <a asp-page="./Details" asp-route-id="@item.Id">Details</a> |
-                <a asp-page="./Delete" asp-route-id="@item.Id">Delete</a>
-            </td>
-        </tr>
-}
+        @foreach (var item in Model.Aquariums)
+        {
+            <tr>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Id)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Capacity) l
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Mass) kg
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Length) cm
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Width) cm
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Heigth) cm
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.GlassThickness) mm
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.FkPortion)
+                </td>
+                <td>
+                    <a asp-page="./Edit" asp-route-id="@item.Id">Edit</a> |
+                    <a asp-page="./Details" asp-route-id="@item.Id">Details</a> |
+                    <a asp-page="./Delete" asp-route-id="@item.Id">Delete</a>
+                </td>
+            </tr>
+        }
     </tbody>
 </table>

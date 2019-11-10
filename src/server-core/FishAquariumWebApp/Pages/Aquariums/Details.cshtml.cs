@@ -1,4 +1,6 @@
-﻿using System.Threading.Tasks;
+﻿using System.Collections.Generic;
+using System.Linq;
+using System.Threading.Tasks;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.Mvc.RazorPages;
 using Microsoft.EntityFrameworkCore;
@@ -16,6 +18,7 @@ namespace FishAquariumWebApp.Pages.Aquariums
         }
 
         public Aquarium Aquarium { get; set; }
+        public List<Fish> Fishes { get; set; }
 
         public async Task<IActionResult> OnGetAsync(int? id)
         {
@@ -25,6 +28,7 @@ namespace FishAquariumWebApp.Pages.Aquariums
             }
 
             Aquarium = await _context.Aquarium.FirstOrDefaultAsync(m => m.Id == id);
+            Fishes = await _context.Fish.Where(x => x.FkAquarium == id).ToListAsync();
 
             if (Aquarium == null)
             {

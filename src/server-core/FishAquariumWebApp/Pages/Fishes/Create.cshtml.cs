@@ -1,7 +1,11 @@
-﻿using System.Threading.Tasks;
+﻿using System.Collections.Generic;
+using System.Linq;
+using System.Threading.Tasks;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.Mvc.RazorPages;
 using FishAquariumWebApp.Models;
+using Microsoft.AspNetCore.Mvc.Rendering;
+using Microsoft.EntityFrameworkCore;
 
 namespace FishAquariumWebApp.Pages.Fishes
 {
@@ -14,13 +18,16 @@ namespace FishAquariumWebApp.Pages.Fishes
             _context = context;
         }
 
-        public IActionResult OnGet()
+        public async Task<IActionResult> OnGet()
         {
+            Aquariums = await _context.Aquarium.ToListAsync();
             return Page();
         }
 
         [BindProperty]
         public Fish Fish { get; set; }
+
+        public List<Aquarium> Aquariums { get; set; }
 
         public async Task<IActionResult> OnPostAsync()
         {
@@ -33,6 +40,11 @@ namespace FishAquariumWebApp.Pages.Fishes
             await _context.SaveChangesAsync();
 
             return RedirectToPage("./Index");
+        }
+
+        public IEnumerable<SelectListItem> GetAquariumSelectListItems()
+        {
+            return Aquariums.Select(x => new SelectListItem(x.Id.ToString(), x.Id.ToString()));
         }
     }
 }

@@ -1,9 +1,14 @@
-﻿namespace FishAquariumWebApp.Models
+﻿using System.ComponentModel.DataAnnotations;
+
+namespace FishAquariumWebApp.Enums
 {
     public enum FishGenderTypes
     {
+        [Display(Name = "Male")]
         Male,
+        [Display(Name = "Female")]
         Female,
-        Hermafrodita
+        [Display(Name = "Hermaphrodite")]
+        Hermaphrodite
     }
 }

@@ -1,4 +1,6 @@
-﻿namespace FishAquariumWebApp.Models
+﻿using System.Collections.Generic;
+
+namespace FishAquariumWebApp.Models
 {
     public class Aquarium
     {
