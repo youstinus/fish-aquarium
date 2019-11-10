@@ -7,9 +7,9 @@ namespace FishAquariumWebApp.Pages.Aquariums
 {
     public class CreateModel : PageModel
     {
-        private readonly FishAquariumWebApp.Configurations.FishAquariumContext _context;
+        private readonly Configurations.FishAquariumContext _context;
 
-        public CreateModel(FishAquariumWebApp.Configurations.FishAquariumContext context)
+        public CreateModel(Configurations.FishAquariumContext context)
         {
             _context = context;
         }
