@@ -16,6 +16,11 @@ namespace FishAquariumWebApp.Pages.Aquariums
 
         public IActionResult OnGet()
         {
+            if (!IsAdmin())
+            {
+                return RedirectToPage("Index");
+            }
+
             return Page();
         }
 
@@ -33,6 +38,11 @@ namespace FishAquariumWebApp.Pages.Aquariums
             await _context.SaveChangesAsync();
 
             return RedirectToPage("./Index");
+        }
+
+        public bool IsAdmin()
+        {
+            return true;
         }
     }
 }

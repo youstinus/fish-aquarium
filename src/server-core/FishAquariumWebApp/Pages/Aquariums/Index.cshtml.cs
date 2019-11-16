@@ -23,5 +23,10 @@ namespace FishAquariumWebApp.Pages.Aquariums
         {
             Aquariums = await _context.Aquarium.ToListAsync();
         }
+
+        public bool IsAdmin()
+        {
+            return false;
+        }
     }
 }
