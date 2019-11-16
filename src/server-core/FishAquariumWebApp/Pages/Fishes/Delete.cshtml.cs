@@ -20,6 +20,11 @@ namespace FishAquariumWebApp.Pages.Fishes
 
         public async Task<IActionResult> OnGetAsync(int? id)
         {
+            if (!IsAdmin())
+            {
+                return RedirectToPage("Index");
+            }
+
             if (id == null)
             {
                 return NotFound();
@@ -50,6 +55,11 @@ namespace FishAquariumWebApp.Pages.Fishes
             }
 
             return RedirectToPage("./Index");
+        }
+
+        public bool IsAdmin()
+        {
+            return true;
         }
     }
 }

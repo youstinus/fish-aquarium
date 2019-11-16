@@ -20,6 +20,11 @@ namespace FishAquariumWebApp.Pages.Fishes
 
         public async Task<IActionResult> OnGet()
         {
+            if (!IsAdmin())
+            {
+                return RedirectToPage("Index");
+            }
+
             Aquariums = await _context.Aquarium.ToListAsync();
             return Page();
         }
@@ -45,6 +50,11 @@ namespace FishAquariumWebApp.Pages.Fishes
         public IEnumerable<SelectListItem> GetAquariumSelectListItems()
         {
             return Aquariums.Select(x => new SelectListItem(x.Id.ToString(), x.Id.ToString()));
+        }
+
+        public bool IsAdmin()
+        {
+            return true;
         }
     }
 }
