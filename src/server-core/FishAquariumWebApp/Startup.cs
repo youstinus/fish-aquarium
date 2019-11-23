@@ -1,5 +1,8 @@
 using FishAquariumWebApp.Configurations;
+using FishAquariumWebApp.Middlewares;
 using Microsoft.AspNetCore.Builder;
+using Microsoft.AspNetCore.DataProtection;
+using Microsoft.AspNetCore.DataProtection.AuthenticatedEncryption;
 using Microsoft.AspNetCore.Hosting;
 using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
@@ -20,10 +23,18 @@ namespace FishAquariumWebApp
         // This method gets called by the runtime. Use this method to add services to the container.
         public void ConfigureServices(IServiceCollection services)
         {
+            services.AddSession();
+            services.AddDataProtection();
+
+            services.AddMvc().AddRazorPagesOptions(options =>
+            {
+                options.AllowAreas = true;
+            });
+
             services.Configure<CookiePolicyOptions>(options =>
             {
                 // This lambda determines whether user consent for non-essential cookies is needed for a given request.
-                options.CheckConsentNeeded = context => true;
+                options.CheckConsentNeeded = context => false;
                 options.MinimumSameSitePolicy = SameSiteMode.None;
             });
 
@@ -47,6 +58,8 @@ namespace FishAquariumWebApp
                 app.UseHsts();
             }
 
+            app.UseSession();
+            app.UseAdminMiddleware();
             app.UseHttpsRedirection();
             app.UseStaticFiles();
             app.UseCookiePolicy();
