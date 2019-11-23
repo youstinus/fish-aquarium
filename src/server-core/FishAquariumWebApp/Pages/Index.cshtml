@@ -26,6 +26,13 @@
     <h4>Edgaras Žaliabarštis</h4>
     <h4>Linas</h4>
 </div>
+<h3>Admin Panel</h3>
+@if (Model.Username != "")
+{
+    <p>Welcome @Model.Username</p>
+    <a asp-page="index" asp-page-handler="logout">Logout</a>
+
+}
 
 @*<div id="myCarousel" class="carousel slide" data-ride="carousel" data-interval="6000">
         <ol class="carousel-indicators">
