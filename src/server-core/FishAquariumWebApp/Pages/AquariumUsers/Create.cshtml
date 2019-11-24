@@ -25,12 +25,12 @@
             </div>
             <div class="form-group">
                 <label asp-for="AquariumUser.BirthDate" class="control-label"></label>
-                <input asp-for="AquariumUser.BirthDate" class="form-control" />
+                <input asp-for="AquariumUser.BirthDate" class="form-control" type="date" />
                 <span asp-validation-for="AquariumUser.BirthDate" class="text-danger"></span>
             </div>
             <div class="form-group">
                 <label asp-for="AquariumUser.RegistrationDate" class="control-label"></label>
-                <input asp-for="AquariumUser.RegistrationDate" class="form-control" />
+                <input asp-for="AquariumUser.RegistrationDate" class="form-control" type="date" />
                 <span asp-validation-for="AquariumUser.RegistrationDate" class="text-danger"></span>
             </div>
             <div class="form-group">
@@ -39,18 +39,15 @@
                 <span asp-validation-for="AquariumUser.Email" class="text-danger"></span>
             </div>
             <div class="form-group">
-                <label asp-for="AquariumUser.Password" class="control-label"></label>
-                <input asp-for="AquariumUser.Password" class="form-control" />
-                <span asp-validation-for="AquariumUser.Password" class="text-danger"></span>
-            </div>
-            <div class="form-group">
                 <label asp-for="AquariumUser.Code" class="control-label"></label>
                 <input asp-for="AquariumUser.Code" class="form-control" />
                 <span asp-validation-for="AquariumUser.Code" class="text-danger"></span>
             </div>
             <div class="form-group">
                 <label asp-for="AquariumUser.Type" class="control-label"></label>
-                <input asp-for="AquariumUser.Type" class="form-control" />
+                <select asp-for="AquariumUser.Type" asp-items="Html.GetEnumSelectList<Models.UserTypes>()">
+                    <option selected="selected" value=""> @*@Html.DisplayFor(modelItem => Models.UserTypes.Worker)*@</option>
+                </select>
                 <span asp-validation-for="AquariumUser.Type" class="text-danger"></span>
             </div>
             <div class="form-group">

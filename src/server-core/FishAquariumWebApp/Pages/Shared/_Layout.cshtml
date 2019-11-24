@@ -1,10 +1,11 @@
-﻿<!DOCTYPE html>
+﻿@using Microsoft.AspNetCore.Http;
+<!DOCTYPE html>
 <html>
 <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>@ViewData["Title"] - FishAquariumWebApp</title>
-    
+
     <environment exclude="Development">
         <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css"
               asp-fallback-href="~/lib/bootstrap/dist/css/bootstrap.min.css"
@@ -28,6 +29,16 @@
                     <span class="icon-bar"></span>
                 </button>
                 <a asp-page="/Index" class="navbar-brand">FishAquariumWebApp</a>
+                @if (@Context.Session.GetString("username") != null)
+                {
+                    <p class="navbar-brand">Hello @Model.Username</p>
+                    <a asp-page="index" class="navbar-brand" asp-page-handler="logout">Logout</a>
+                }
+                else
+                {
+                    <a asp-page="login" class="navbar-brand" asp-page-handler="login">Login</a>
+                }
+
             </div>
             <div class="navbar-collapse collapse">
                 <ul class="nav navbar-nav">
@@ -44,7 +55,6 @@
                     <li><a asp-page="/Portions/Index">Portions</a></li>
                     <li><a asp-page="/Supplements/Index">Supplements</a></li>
                 </ul>
-                <a asp-page="index" asp-page-handler="logout">Logout</a>
             </div>
         </div>
     </nav>
