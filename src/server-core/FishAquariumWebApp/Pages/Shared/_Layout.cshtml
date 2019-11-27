@@ -31,7 +31,7 @@
                 <a asp-page="/Index" class="navbar-brand">FishAquariumWebApp</a>
                 @if (@Context.Session.GetString("username") != null)
                 {
-                    <p class="navbar-brand">Hello @Model.Username</p>
+                  
                     <a asp-page="index" class="navbar-brand" asp-page-handler="logout">Logout</a>
                 }
                 else
