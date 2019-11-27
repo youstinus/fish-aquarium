@@ -31,7 +31,6 @@
                 <a asp-page="/Index" class="navbar-brand">FishAquariumWebApp</a>
                 @if (@Context.Session.GetString("username") != null)
                 {
-                  
                     <a asp-page="index" class="navbar-brand" asp-page-handler="logout">Logout</a>
                 }
                 else
