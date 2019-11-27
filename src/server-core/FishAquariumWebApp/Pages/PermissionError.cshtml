@@ -1,0 +1,16 @@
+﻿@page
+@model PermissionErrorModel
+
+<h1 class="text-danger">Error.</h1>
+<h2 class="text-danger">You do not have permition enter this page.</h2>
+
+<h3>Suggestions:</h3>
+<p>
+    <a href='javascript:history.go(-1)'>Go back</a>
+</p>
+<p>
+    <a asp-page="/Login">Login</a>
+</p>
+<p>
+    <a asp-page="/Index">Go to home page</a>
+</p>
