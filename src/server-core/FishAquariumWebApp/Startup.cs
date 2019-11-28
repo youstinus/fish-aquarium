@@ -38,6 +38,7 @@ namespace FishAquariumWebApp
                 options.MinimumSameSitePolicy = SameSiteMode.None;
             });
 
+            services.AddHttpContextAccessor();
             services.AddAllDependencies();
             // reads connection string and uses MySQL
             services.SetUpDatabase(Configuration);

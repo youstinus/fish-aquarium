@@ -5,6 +5,7 @@ using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.Mvc.RazorPages;
 using Microsoft.EntityFrameworkCore;
 using FishAquariumWebApp.Models;
+using Microsoft.AspNetCore.Http;
 
 namespace FishAquariumWebApp.Pages.Aquariums
 {
@@ -35,6 +36,11 @@ namespace FishAquariumWebApp.Pages.Aquariums
                 return NotFound();
             }
             return Page();
+        }
+
+        public bool IsAdmin()
+        {
+            return HttpContext.Session.GetString("role") == UserTypes.Admin.ToString();
         }
     }
 }

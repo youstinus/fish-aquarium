@@ -26,7 +26,8 @@ namespace FishAquariumWebApp.Pages
 
         public async System.Threading.Tasks.Task<IActionResult> OnPostAsync(string mail, string password)
         {
-            AquariumUser = await _context.AquariumUser.FirstOrDefaultAsync(m => m.Email == mail && m.Password == CipherService.Encrypt(password));
+            var enc = CipherService.Encrypt(password);
+            AquariumUser = await _context.AquariumUser.FirstOrDefaultAsync(m => m.Email == mail && m.Password == enc);
             string a = CipherService.Encrypt(password);
             if (AquariumUser != null)
             {
