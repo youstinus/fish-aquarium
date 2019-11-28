@@ -1,4 +1,5 @@
-﻿@using Microsoft.AspNetCore.Http;
+﻿@using FishAquariumWebApp.Models
+@using Microsoft.AspNetCore.Http;
 <!DOCTYPE html>
 <html>
 <head>
@@ -43,16 +44,30 @@
                 <ul class="nav navbar-nav">
                     <li><a asp-page="/Index">Home</a></li>
                     <li><a asp-page="/About">About</a></li>
+
+                    @if (@Context.Session.GetString("username") != null)
+                    {
+                        <li><a asp-page="/AquariumUsers/Index">Users</a></li>
+                    }
+
+
+                    @*<li><a asp-page="/Decorations/Index">Decorations</a></li>*@
+                    @*<li><a asp-page="/Equipments/Index">Equipments</a></li>*@
                     <li><a asp-page="/Aquariums/Index">Aquariums</a></li>
-                    <li><a asp-page="/AquariumTasks/Index">Tasks</a></li>
-                    <li><a asp-page="/AquariumUsers/Index">Users</a></li>
-                    <li><a asp-page="/Decorations/Index">Decorations</a></li>
-                    <li><a asp-page="/Equipments/Index">Equipments</a></li>
                     <li><a asp-page="/Fishes/Index">Fishes</a></li>
+
+
                     <li><a asp-page="/Foods/Index">Foods</a></li>
-                    <li><a asp-page="/ItemParameters/Index">Parameters</a></li>
                     <li><a asp-page="/Portions/Index">Portions</a></li>
-                    <li><a asp-page="/Supplements/Index">Supplements</a></li>
+                    @*<li><a asp-page="/Supplements/Index">Supplements</a></li>*@
+
+
+                    @if (@Context.Session.GetString("role") == UserTypes.Admin.ToString() || @Context.Session.GetString("role") == UserTypes.User.ToString())
+                    {
+                        <li><a asp-page="/AquariumTasks/Index">Tasks</a></li>
+                    }
+                    <li><a asp-page="/ItemParameters/Index">Parameters</a></li>
+
                 </ul>
             </div>
         </div>

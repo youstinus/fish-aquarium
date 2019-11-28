@@ -56,6 +56,9 @@
     </dl>
 </div>
 <div>
-    <a asp-page="./Edit" asp-route-id="@Model.AquariumTask.Id">Edit</a> |
+    @if (Model.IsUserOrAdmin())
+    {
+        <a asp-page="./Edit" asp-route-id="@Model.AquariumTask.Id">Edit</a>
+    }
     <a asp-page="./Index">Back to List</a>
 </div>

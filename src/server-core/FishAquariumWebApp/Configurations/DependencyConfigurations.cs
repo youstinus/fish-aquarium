@@ -1,4 +1,6 @@
-﻿using Microsoft.Extensions.DependencyInjection;
+﻿using FishAquariumWebApp.Services;
+using FishAquariumWebApp.Services.Interfaces;
+using Microsoft.Extensions.DependencyInjection;
 
 namespace FishAquariumWebApp.Configurations
 {
@@ -19,7 +21,8 @@ namespace FishAquariumWebApp.Configurations
         
         public static IServiceCollection AddServiceDependencies(this IServiceCollection services)
         {
-            return services/*.AddSingleton<ITimeService, TimeService>()*/;
+            return services/*.AddSingleton<ITimeService, TimeService>()*/
+                .AddSingleton<IRoleService, RoleService>();
         }
     }
 }

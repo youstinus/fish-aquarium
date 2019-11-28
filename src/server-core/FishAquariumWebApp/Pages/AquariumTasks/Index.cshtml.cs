@@ -1,6 +1,7 @@
 ﻿using System.Collections.Generic;
 using System.Threading.Tasks;
 using FishAquariumWebApp.Models;
+using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc.RazorPages;
 using Microsoft.EntityFrameworkCore;
 
@@ -20,6 +21,16 @@ namespace FishAquariumWebApp.Pages.AquariumTasks
         public async Task OnGetAsync()
         {
             AquariumTasks = await _context.AquariumTask.ToListAsync();
+        }
+
+        public bool IsAdmin()
+        {
+            return HttpContext.Session.GetString("role") == UserTypes.Admin.ToString();
+        }
+
+        public bool IsUserOrAdmin()
+        {
+            return HttpContext.Session.GetString("role") == UserTypes.User.ToString() || HttpContext.Session.GetString("role") == UserTypes.Admin.ToString();
         }
     }
 }

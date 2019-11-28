@@ -4,6 +4,8 @@ using System.Threading.Tasks;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.Mvc.RazorPages;
 using FishAquariumWebApp.Models;
+using Microsoft.AspNetCore.Hosting.Internal;
+using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc.Rendering;
 using Microsoft.EntityFrameworkCore;
 
@@ -54,7 +56,7 @@ namespace FishAquariumWebApp.Pages.Fishes
 
         public bool IsAdmin()
         {
-            return true;
+            return HttpContext.Session.GetString("role") == UserTypes.Admin.ToString();
         }
     }
 }

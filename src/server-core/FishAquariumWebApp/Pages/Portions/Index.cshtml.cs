@@ -3,6 +3,7 @@ using System.Threading.Tasks;
 using Microsoft.AspNetCore.Mvc.RazorPages;
 using Microsoft.EntityFrameworkCore;
 using FishAquariumWebApp.Models;
+using Microsoft.AspNetCore.Http;
 
 namespace FishAquariumWebApp.Pages.Portions
 {
@@ -20,6 +21,11 @@ namespace FishAquariumWebApp.Pages.Portions
         public async Task OnGetAsync()
         {
             Portions = await _context.Portion.ToListAsync();
+        }
+
+        public bool IsUserOrAdmin()
+        {
+            return HttpContext.Session.GetString("role") == UserTypes.User.ToString() || HttpContext.Session.GetString("role") == UserTypes.Admin.ToString();
         }
     }
 }

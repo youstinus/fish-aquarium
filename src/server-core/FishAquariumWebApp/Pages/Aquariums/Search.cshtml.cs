@@ -4,6 +4,7 @@ using System.Threading.Tasks;
 using Microsoft.AspNetCore.Mvc.RazorPages;
 using Microsoft.EntityFrameworkCore;
 using FishAquariumWebApp.Models;
+using Microsoft.AspNetCore.Http;
 
 namespace FishAquariumWebApp.Pages.Aquariums
 {
@@ -31,12 +32,23 @@ namespace FishAquariumWebApp.Pages.Aquariums
                 Fishes = Fishes.Where(s => s.Description.ToLower().Contains(searchString.ToLower())
                                            || s.Origin.ToLower().Contains(searchString.ToLower())
                                            || s.Species.ToLower().Contains(searchString.ToLower())).ToList();
-
+                Aquariums = Aquariums.Where(s => (s.Capacity!=null && s.Capacity.ToString().Contains(searchString.ToLower()))
+                                                 || (s.GlassThickness != null && s.GlassThickness.ToString().Contains(searchString.ToLower()))
+                                                 || (s.Heigth != null && s.Heigth.ToString().Contains(searchString.ToLower()))
+                                                 || (s.Length != null && s.Length.ToString().Contains(searchString.ToLower()))
+                                                 || (s.Mass != null && s.Mass.ToString().Contains(searchString.ToLower()))
+                                                 || (s.Width != null && s.Width.ToString().Contains(searchString.ToLower()))
+                                                 || (Fishes.Select(x => x.FkAquarium).Contains(s.Id))).ToList();
             }
             else
             {
                 SearchString = "";
             }
+        }
+
+        public bool IsAdmin()
+        {
+            return HttpContext.Session.GetString("role") == UserTypes.Admin.ToString();
         }
     }
 }
