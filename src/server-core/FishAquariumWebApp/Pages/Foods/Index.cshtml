@@ -2,10 +2,10 @@
 @model FishAquariumWebApp.Pages.Foods.IndexModel
 
 @{
-    ViewData["Title"] = "Index";
+    ViewData["Title"] = "Food";
 }
 
-<h2>Index</h2>
+<h2>Food</h2>
 
 @if (Model.IsUserOrAdmin())
 {
@@ -35,10 +35,10 @@
                 @Html.DisplayNameFor(model => model.Foods[0].Fat)
             </th>
             <th>
-                @Html.DisplayNameFor(model => model.Foods[0].PrepManual)
+                Manual
             </th>
             <th>
-                @Html.DisplayNameFor(model => model.Foods[0].ExpirationDate)
+                Expiration Date
             </th>
             <th>
                 @Html.DisplayNameFor(model => model.Foods[0].Allergen)
@@ -53,19 +53,19 @@
                 @Html.DisplayFor(modelItem => item.Name)
             </td>
             <td>
-                @Html.DisplayFor(modelItem => item.Mass)
+                @Html.DisplayFor(modelItem => item.Mass) g
             </td>
             <td>
-                @Html.DisplayFor(modelItem => item.Calories)
+                @Html.DisplayFor(modelItem => item.Calories) kcal
             </td>
             <td>
-                @Html.DisplayFor(modelItem => item.Carbs)
+                @Html.DisplayFor(modelItem => item.Carbs) g
             </td>
             <td>
-                @Html.DisplayFor(modelItem => item.Proten)
+                @Html.DisplayFor(modelItem => item.Proten) g
             </td>
             <td>
-                @Html.DisplayFor(modelItem => item.Fat)
+                @Html.DisplayFor(modelItem => item.Fat) g
             </td>
             <td>
                 @Html.DisplayFor(modelItem => item.PrepManual)

@@ -1,6 +1,7 @@
 ﻿@page
 @model FishAquariumWebApp.Pages.Portions.CreateModel
 
+
 @{
     ViewData["Title"] = "Create";
 }
@@ -14,25 +15,23 @@
         <form method="post">
             <div asp-validation-summary="ModelOnly" class="text-danger"></div>
             <div class="form-group">
-                <label asp-for="Portion.PreparationDate" class="control-label"></label>
+                <label>Preparation Date</label>
                 <input asp-for="Portion.PreparationDate" class="form-control" />
                 <span asp-validation-for="Portion.PreparationDate" class="text-danger"></span>
             </div>
-            <div class="form-group">
-                <label asp-for="Portion.Id" class="control-label"></label>
-                <input asp-for="Portion.Id" class="form-control" />
-                <span asp-validation-for="Portion.Id" class="text-danger"></span>
-            </div>
-            <div class="form-group">
-                <label asp-for="Portion.FkFood" class="control-label"></label>
-                <input asp-for="Portion.FkFood" class="form-control" />
+            <!-- <div class="form-group">
+                <label>Food</label>           
+               <select>asp-for="Portion.FkFood" api-items="Html.GetEnumSelectList" >
+                    <option selected="selected" value=""> @*@Html.DisplayFor(modelItem => Models.item.Name)*@</option>
                 <span asp-validation-for="Portion.FkFood" class="text-danger"></span>
-            </div>
+            </div>-->
             <div class="form-group">
-                <label asp-for="Portion.FkSupplement" class="control-label"></label>
+                <label>Supplement </label> 
+              <!--   <label asp-for="Portion.FkSupplement" class="control-label"></label> -->
                 <input asp-for="Portion.FkSupplement" class="form-control" />
                 <span asp-validation-for="Portion.FkSupplement" class="text-danger"></span>
             </div>
+                                                  
             <div class="form-group">
                 <input type="submit" value="Create" class="btn btn-default" />
             </div>
@@ -47,3 +46,6 @@
 @section Scripts {
     @{await Html.RenderPartialAsync("_ValidationScriptsPartial");}
 }
+     <div class="form-group">
+
+         
