@@ -1,11 +1,12 @@
 ﻿@page
 @model FishAquariumWebApp.Pages.Portions.IndexModel
 
+
 @{
-    ViewData["Title"] = "Index";
+    ViewData["Title"] = "Portion";
 }
 
-<h2>Index</h2>
+<h2>Portion</h2>
 
 @if (Model.IsUserOrAdmin())
 {
@@ -17,13 +18,13 @@
     <thead>
         <tr>
             <th>
-                @Html.DisplayNameFor(model => model.Portions[0].PreparationDate)
+                Preparation Date
             </th>
             <th>
-                @Html.DisplayNameFor(model => model.Portions[0].FkFood)
+                Food
             </th>
             <th>
-                @Html.DisplayNameFor(model => model.Portions[0].FkSupplement)
+                Supplement
             </th>
             <th></th>
         </tr>

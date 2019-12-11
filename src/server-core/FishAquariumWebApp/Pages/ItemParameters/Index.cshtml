@@ -2,10 +2,10 @@
 @model FishAquariumWebApp.Pages.ItemParameters.IndexModel
 
 @{
-    ViewData["Title"] = "Index";
+    ViewData["Title"] = "Parameters";
 }
 
-<h2>Index</h2>
+<h2>Parameters</h2>
 
 @*<p>
     <a asp-page="Create">Create New</a>
@@ -23,10 +23,10 @@
                 @Html.DisplayNameFor(model => model.ItemParameters[0].Type)
             </th>
             <th>
-                @Html.DisplayNameFor(model => model.ItemParameters[0].FkFish)
+                Fish
             </th>
             <th>
-                @Html.DisplayNameFor(model => model.ItemParameters[0].FkAquarium)
+                Aquarium
             </th>
             <th></th>
         </tr>
@@ -38,7 +38,7 @@
                 @Html.DisplayFor(modelItem => item.Name)
             </td>
             <td>
-                @Html.DisplayFor(modelItem => item.Value)
+                @Html.DisplayFor(modelItem => item.Value) e
             </td>
             <td>
                 @Html.DisplayFor(modelItem => item.Type)
