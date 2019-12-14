@@ -39,6 +39,7 @@ namespace FishAquariumWebApp.Pages.AquariumUsers
 
                      select new AquariumUserTasks
                      {
+                        Id = users.Id,
                         FirstName = users.FirstName,
                         LastName = users.LastName,
                         BirthDate = users.BirthDate,
@@ -57,11 +58,9 @@ namespace FishAquariumWebApp.Pages.AquariumUsers
                     break;
                 case "2":
                     AquariumUsers = AquariumUsers.Where(x => x.TaskCount > (filt /  3) && x.TaskCount <= (filt * 2 / 3)).ToList();
-
                     break;
                 case "3":
                     AquariumUsers = AquariumUsers.Where(x => x.TaskCount <= (filt / 3)).ToList();
-
                     break;
                 default:  
                     break;

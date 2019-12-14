@@ -32,11 +32,12 @@
                 <a asp-page="/Index" class="navbar-brand">FishAquariumWebApp</a>
                 @if (@Context.Session.GetString("username") != null)
                 {
-                    <a asp-page="index" class="navbar-brand" asp-page-handler="logout">Logout</a>
+                    <a asp-page="/Index" class="navbar-brand" asp-page-handler="logout">Logout</a>
                 }
                 else
                 {
-                    <a asp-page="login" class="navbar-brand" asp-page-handler="login">Login</a>
+                    @*<a asp-page="/Login" class="navbar-brand" asp-page-handler="login">Login</a>*@
+                    <a asp-page="/Login" class="navbar-brand" >Login</a>
                 }
 
             </div>
