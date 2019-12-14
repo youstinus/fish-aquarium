@@ -13,7 +13,6 @@ namespace FishAquariumWebApp.Models
         [DisplayFormat(ApplyFormatInEditMode = true, DataFormatString = "{0:MM/dd/yyyy}")]
         public DateTime? BirthDate { get; set; }
         [DisplayFormat(ApplyFormatInEditMode = true, DataFormatString = "{0:MM/dd/yyyy}")]
-        [Required]
         public DateTime? RegistrationDate { get; set; }
         [Required]
         [EmailAddress]

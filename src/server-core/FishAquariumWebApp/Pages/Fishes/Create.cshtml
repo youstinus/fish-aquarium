@@ -6,9 +6,7 @@
     ViewData["Title"] = "Create";
 }
 
-<h2>Create</h2>
-
-<h4>Fish</h4>
+<h2>Add Fish</h4>
 <hr />
 <div class="row">
     <div class="col-md-4">
@@ -35,12 +33,12 @@
                 <span asp-validation-for="Fish.Origin" class="text-danger"></span>
             </div>
             <div class="form-group">
-                <label asp-for="Fish.ArrivalDate" class="control-label"></label>
+                <label asp-for="Fish.ArrivalDate" class="control-label">Arrival Date</label>
                 <input asp-for="Fish.ArrivalDate" class="form-control" />
                 <span asp-validation-for="Fish.ArrivalDate" class="text-danger"></span>
             </div>
             <div class="form-group">
-                <label asp-for="Fish.LifeExpectancy" class="control-label"></label>
+                <label asp-for="Fish.LifeExpectancy" class="control-label">Life Expectancy</label>
                 <input asp-for="Fish.LifeExpectancy" class="form-control" />
                 <span asp-validation-for="Fish.LifeExpectancy" class="text-danger"></span>
             </div>
@@ -60,7 +58,7 @@
                 <span asp-validation-for="Fish.Id" class="text-danger"></span>
             </div>*@
             <div class="form-group">
-                <label asp-for="Fish.FkAquarium" class="control-label"></label>
+                <label asp-for="Fish.FkAquarium" class="control-label">Aquarium</label>
                 <select asp-for="Fish.FkAquarium" asp-items="@(Model.GetAquariumSelectListItems())"></select>
                 <span asp-validation-for="Fish.FkAquarium" class="text-danger"></span>
             </div>

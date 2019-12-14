@@ -45,6 +45,7 @@ namespace FishAquariumWebApp.Pages.AquariumUsers
             SendEmail(AquariumUser.Email, password);
 
             AquariumUser.Password = CipherService.Encrypt(password);
+            AquariumUser.RegistrationDate = DateTime.Now;
             AquariumUser.Type++;
             _context.AquariumUser.Add(AquariumUser);
             await _context.SaveChangesAsync();

@@ -5,12 +5,13 @@
     ViewData["Title"] = "Index";
 }
 
-<h2>Index</h2>
+    <h2>Aquarium Users</h2>
 
 <div class="form-group">
     <form asp-page="/AquariumsUsers/Index" method="get" style="text-align: right">
-        <label asp-for="filter" class="control-label"></label>
+        <label asp-for="filter" class="control-label">Filter level</label>
         <select name="filter">
+            <option value="0"></option>
             <option value="1">Active</option>
             <option value="2">Semi-active</option>
             <option value="3">Inactive</option>
