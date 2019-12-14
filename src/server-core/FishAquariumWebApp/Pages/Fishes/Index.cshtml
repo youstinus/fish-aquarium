@@ -5,7 +5,7 @@
     ViewData["Title"] = "Index";
 }
 
-<h2>Index</h2>
+    <h2>Fishes</h2>
 
 @if (Model.IsAdmin())
 { // check if admin
@@ -17,9 +17,6 @@
 <table class="table">
     <thead>
         <tr>
-            <th>
-                @Html.DisplayNameFor(model => model.Fishes[0].Id)
-            </th>
             <th>
                 @Html.DisplayNameFor(model => model.Fishes[0].Species)
             </th>
@@ -44,9 +41,6 @@
             <th>
                 @Html.DisplayNameFor(model => model.Fishes[0].Gender)
             </th>
-            <th>
-                @Html.DisplayNameFor(model => model.Fishes[0].FkAquarium)
-            </th>
             <th></th>
         </tr>
     </thead>
@@ -54,9 +48,6 @@
         @foreach (var item in Model.Fishes)
         {
             <tr>
-                <td>
-                    @Html.DisplayFor(modelItem => item.Id)
-                </td>
                 <td>
                     @Html.DisplayFor(modelItem => item.Species)
                 </td>
@@ -80,9 +71,6 @@
                 </td>
                 <td>
                     @Html.DisplayFor(modelItem => item.Gender)
-                </td>
-                <td>
-                    @Html.DisplayFor(modelItem => item.FkAquarium)
                 </td>
                 <td>
                     @*<a asp-page="./Edit" asp-route-id="@item.Id">Edit</a> |*@

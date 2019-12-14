@@ -5,34 +5,32 @@
     ViewData["Title"] = "Create";
 }
 
-<h2>Create</h2>
-
-<h4>AquariumUser</h4>
+<h2>CreateAquariumUser</h2>
 <hr />
 <div class="row">
     <div class="col-md-4">
         <form method="post">
             <div asp-validation-summary="ModelOnly" class="text-danger"></div>
             <div class="form-group">
-                <label asp-for="AquariumUser.FirstName" class="control-label"></label>
+                <label asp-for="AquariumUser.FirstName" class="control-label">First Name</label>
                 <input asp-for="AquariumUser.FirstName" class="form-control" />
                 <span asp-validation-for="AquariumUser.FirstName" class="text-danger"></span>
             </div>
             <div class="form-group">
-                <label asp-for="AquariumUser.LastName" class="control-label"></label>
+                <label asp-for="AquariumUser.LastName" class="control-label">Last Name</label>
                 <input asp-for="AquariumUser.LastName" class="form-control" />
                 <span asp-validation-for="AquariumUser.LastName" class="text-danger"></span>
             </div>
             <div class="form-group">
-                <label asp-for="AquariumUser.BirthDate" class="control-label"></label>
+                <label asp-for="AquariumUser.BirthDate" class="control-label">Birth Date</label>
                 <input asp-for="AquariumUser.BirthDate" class="form-control" type="date" />
                 <span asp-validation-for="AquariumUser.BirthDate" class="text-danger"></span>
             </div>
-            <div class="form-group">
+            @*<div class="form-group">
                 <label asp-for="AquariumUser.RegistrationDate" class="control-label"></label>
                 <input asp-for="AquariumUser.RegistrationDate" class="form-control" type="date" />
                 <span asp-validation-for="AquariumUser.RegistrationDate" class="text-danger"></span>
-            </div>
+            </div>*@
             <div class="form-group">
                 <label asp-for="AquariumUser.Email" class="control-label"></label>
                 <input asp-for="AquariumUser.Email" class="form-control" />
