@@ -7,6 +7,19 @@
 
 <h2>Index</h2>
 
+<div class="form-group">
+    <form asp-page="/AquariumsUsers/Index" method="get" style="text-align: right">
+        <label asp-for="filter" class="control-label"></label>
+        <select name="filter">
+            <option value="1">Active</option>
+            <option value="2">Semi-active</option>
+            <option value="3">Inactive</option>
+        </select>
+        <span asp-validation-for="filter" class="text-danger"></span>
+        <input type="submit" value="Filter" class="btn btn-default" />
+    </form>
+</div>
+
 <p>
     <a asp-page="Create">Create New</a>
 </p>
@@ -34,11 +47,15 @@
             <th>
                 @Html.DisplayNameFor(model => model.AquariumUsers[0].Type)
             </th>
+            <th>
+                @Html.DisplayNameFor(model => model.AquariumUsers[0].TaskCount)
+            </th>
             <th></th>
         </tr>
     </thead>
     <tbody>
-@foreach (var item in Model.AquariumUsers) {
+        @foreach (var item in Model.AquariumUsers)
+        {
         <tr>
             <td>
                 @Html.DisplayFor(modelItem => item.FirstName)
@@ -62,11 +79,14 @@
                 @Html.DisplayFor(modelItem => item.Type)
             </td>
             <td>
+                @Html.DisplayFor(modelItem => item.TaskCount)
+            </td>
+            <td>
                 <a asp-page="./Edit" asp-route-id="@item.Id">Edit</a> |
                 <a asp-page="./Details" asp-route-id="@item.Id">Details</a> |
                 <a asp-page="./Delete" asp-route-id="@item.Id">Delete</a>
             </td>
         </tr>
-}
+        }
     </tbody>
 </table>
