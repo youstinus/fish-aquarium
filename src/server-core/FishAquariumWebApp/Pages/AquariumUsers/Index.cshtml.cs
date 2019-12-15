@@ -46,7 +46,7 @@ namespace FishAquariumWebApp.Pages.AquariumUsers
                         RegistrationDate = users.RegistrationDate,
                         Email = users.Email,
                         Code = users.Code,
-                        Type = users.Type,
+                        Type = (int)users.Type,
                         TaskCount = usersTasks.Count()
 
            }).ToList();

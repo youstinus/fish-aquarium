@@ -1,5 +1,6 @@
 ﻿using System;
 using System.ComponentModel.DataAnnotations;
+using FishAquariumWebApp.Enums;
 
 namespace FishAquariumWebApp.Models
 {
@@ -17,7 +18,7 @@ namespace FishAquariumWebApp.Models
         public string PrepManual { get; set; }
         [DisplayFormat(ApplyFormatInEditMode = true, DataFormatString = "{0:MM/dd/yyyy}")]
         public DateTime? ExpirationDate { get; set; }
-        public int? Allergen { get; set; }
+        public AllergenTypes Allergen { get; set; }
         public int Id { get; set; }
     }
 }

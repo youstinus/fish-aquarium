@@ -54,11 +54,6 @@
                 <span asp-validation-for="Food.ExpirationDate" class="text-danger"></span>
             </div>
             <div class="form-group">
-                <label asp-for="Food.Allergen" class="control-label"></label>
-                <input asp-for="Food.Allergen" class="form-control" />
-                <span asp-validation-for="Food.Allergen" class="text-danger"></span>
-            </div>
-            <div class="form-group">
                     <label asp-for="Food.Allergen" class="control-label"></label>
                     <select asp-for="Food.Allergen" asp-items="Html.GetEnumSelectList<Enums.AllergenTypes>()">
                         <option selected="selected" value=""> @*@Html.DisplayFor(modelItem => nums.AllergenTypes)*@</option>

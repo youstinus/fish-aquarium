@@ -1,5 +1,6 @@
 ﻿using System;
 using System.ComponentModel.DataAnnotations;
+using FishAquariumWebApp.Enums;
 
 namespace FishAquariumWebApp.Models
 {
@@ -22,7 +23,7 @@ namespace FishAquariumWebApp.Models
         [Required]
         public string Code { get; set; }
         [Required]
-        public int Type { get; set; }
+        public UserTypes Type { get; set; }
         [Required]
         public int Id { get; set; }
     }
