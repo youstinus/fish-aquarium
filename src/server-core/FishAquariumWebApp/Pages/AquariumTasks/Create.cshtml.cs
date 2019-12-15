@@ -3,7 +3,6 @@ using System.Threading.Tasks;
 using FishAquariumWebApp.Models;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.Mvc.RazorPages;
-using Microsoft.EntityFrameworkCore;
 using System.Linq;
 
 namespace FishAquariumWebApp.Pages.AquariumTasks
@@ -11,27 +10,26 @@ namespace FishAquariumWebApp.Pages.AquariumTasks
     public class CreateModel : PageModel
     {
         private readonly FishAquariumWebApp.Configurations.FishAquariumContext _context;
-
-        public IList<SelectListItem> Options { get; set; }
-
-
+        public List<Microsoft.AspNetCore.Mvc.Rendering.SelectListItem> UserOptions { get; set; }
+        public List<Microsoft.AspNetCore.Mvc.Rendering.SelectListItem> AquariumOptions { get; set; }
         public CreateModel(FishAquariumWebApp.Configurations.FishAquariumContext context)
         {
             _context = context;
         }
- 
+
         public IActionResult OnGet()
-        { 
+        {
+            UserOptions = _context.AquariumUser.Select(a => new Microsoft.AspNetCore.Mvc.Rendering.SelectListItem
+            {
+                Value = a.Id.ToString(),
+                Text = a.FirstName
+            }).ToList();
 
-            Options = (from users in _context.AquariumUser
-                       join tasks in _context.AquariumTask on users.Id equals tasks.FkAquariumUser into usersTasks
-
-                       select new SelectListItem
-                       {
-                          id = users.Id,
-                          name = users.FirstName
-
-                       }).ToList();
+            AquariumOptions = _context.Aquarium.Select(a => new Microsoft.AspNetCore.Mvc.Rendering.SelectListItem
+            {
+                Value = a.Id.ToString(),
+                Text = a.Id.ToString()
+            }).ToList();
             return Page();
         }
 
@@ -50,10 +48,5 @@ namespace FishAquariumWebApp.Pages.AquariumTasks
 
             return RedirectToPage("./Index");
         }
-    }
-    public class SelectListItem
-    {
-        public int id { get; set; }
-        public string name { get; set; }
     }
 }

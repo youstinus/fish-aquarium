@@ -36,10 +36,10 @@
                 @Html.DisplayFor(modelItem => item.PreparationDate)
             </td>
             <td>
-                @Html.DisplayFor(modelItem => item.FkFood)
+                @Html.DisplayFor(modelItem => Model.Foods.SingleOrDefault(x => x.Id == item.FkFood).Name)
             </td>
             <td>
-                @Html.DisplayFor(modelItem => item.FkSupplement)
+                @Html.DisplayFor(modelItem => Model.Supplements.SingleOrDefault(x => x.Id == item.FkSupplement).Name)
             </td>
             <td>
                 @*<a asp-page="./Edit" asp-route-id="@item.Id">Edit</a> |*@
