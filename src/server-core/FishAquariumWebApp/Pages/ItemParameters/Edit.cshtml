@@ -1,4 +1,5 @@
 ﻿@page
+@using FishAquariumWebApp.Enums
 @model FishAquariumWebApp.Pages.ItemParameters.EditModel
 
 @{
@@ -25,18 +26,18 @@
             </div>
             <div class="form-group">
                 <label asp-for="ItemParameter.Type" class="control-label"></label>
-                <input asp-for="ItemParameter.Type" class="form-control" />
+                <select asp-for="ItemParameter.Type" asp-items="Html.GetEnumSelectList<ParameterTypes>()"></select>
                 <span asp-validation-for="ItemParameter.Type" class="text-danger"></span>
             </div>
             <input type="hidden" asp-for="ItemParameter.Id" />
             <div class="form-group">
-                <label>Fish</label>
-                <input asp-for="ItemParameter.FkFish" class="form-control" />
+                <label>Fish </label>
+                <select asp-for="ItemParameter.FkFish" asp-items="Model.Fishes"></select>
                 <span asp-validation-for="ItemParameter.FkFish" class="text-danger"></span>
             </div>
             <div class="form-group">
-                <label>Aquarium</label>
-                <input asp-for="ItemParameter.FkAquarium" class="form-control" />
+                <label>Aquarium </label>
+                <select asp-for="ItemParameter.FkAquarium" asp-items="Model.Aquariums"></select>
                 <span asp-validation-for="ItemParameter.FkAquarium" class="text-danger"></span>
             </div>
             <div class="form-group">

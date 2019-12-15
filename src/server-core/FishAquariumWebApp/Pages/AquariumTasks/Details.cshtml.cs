@@ -1,4 +1,5 @@
 ﻿using System.Threading.Tasks;
+using FishAquariumWebApp.Enums;
 using FishAquariumWebApp.Models;
 using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;

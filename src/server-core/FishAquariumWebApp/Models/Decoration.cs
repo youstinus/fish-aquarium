@@ -1,4 +1,6 @@
-﻿namespace FishAquariumWebApp.Models
+﻿using FishAquariumWebApp.Enums;
+
+namespace FishAquariumWebApp.Models
 {
     public class Decoration
     {
@@ -8,7 +10,7 @@
         public double? Mass { get; set; }
         public string Description { get; set; }
         public string Material { get; set; }
-        public int? Type { get; set; }
+        public DecorationTypes Type { get; set; }
         public int Id { get; set; }
     }
 }
