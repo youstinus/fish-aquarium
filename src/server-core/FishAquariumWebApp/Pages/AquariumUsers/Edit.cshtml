@@ -1,4 +1,5 @@
 ﻿@page
+@using FishAquariumWebApp.Enums
 @model FishAquariumWebApp.Pages.AquariumUsers.EditModel
 
 @{
@@ -38,7 +39,7 @@
             </div>
             <div class="form-group">
                 <label asp-for="AquariumUser.Type" class="control-label"></label>
-                <select asp-for="AquariumUser.Type" asp-items="Html.GetEnumSelectList<Models.UserTypes>()">
+                <select asp-for="AquariumUser.Type" asp-items="Html.GetEnumSelectList<UserTypes>()">
                     <option selected="selected" value="AquariumUser.Type"> </option>
                 </select>                <span asp-validation-for="AquariumUser.Type" class="text-danger"></span>
             </div>

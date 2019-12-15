@@ -1,4 +1,5 @@
-﻿using Microsoft.AspNetCore.Mvc.RazorPages;
+﻿using FishAquariumWebApp.Enums;
+using Microsoft.AspNetCore.Mvc.RazorPages;
 using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.EntityFrameworkCore;
@@ -32,8 +33,8 @@ namespace FishAquariumWebApp.Pages
             if (AquariumUser != null)
             {
                 HttpContext.Session.SetString("username", AquariumUser.FirstName + " " + AquariumUser.LastName);
-                HttpContext.Session.SetString("role", AquariumUser.Type == 1 ? UserTypes.Admin.ToString() :
-                                                       AquariumUser.Type == 2 ? UserTypes.User.ToString() : UserTypes.Guest.ToString());
+                HttpContext.Session.SetString("role", AquariumUser.Type == UserTypes.Admin ? UserTypes.Admin.ToString() :
+                                                       AquariumUser.Type == UserTypes.User ? UserTypes.User.ToString() : UserTypes.Guest.ToString());
                 return RedirectToPage("Index");
             }
             else

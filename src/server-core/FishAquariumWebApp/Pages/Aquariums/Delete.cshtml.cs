@@ -1,4 +1,5 @@
 ﻿using System.Threading.Tasks;
+using FishAquariumWebApp.Enums;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.Mvc.RazorPages;
 using Microsoft.EntityFrameworkCore;

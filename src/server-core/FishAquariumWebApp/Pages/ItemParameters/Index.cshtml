@@ -44,10 +44,10 @@
                 @Html.DisplayFor(modelItem => item.Type)
             </td>
             <td>
-                @Html.DisplayFor(modelItem => item.FkFish)
+                @Html.DisplayFor(modelItem => Model.Fishes.SingleOrDefault(x => x.Id == item.FkFish).Species)
             </td>
             <td>
-                @Html.DisplayFor(modelItem => item.FkAquarium)
+                @Html.DisplayFor(modelItem => Model.Aquariums.SingleOrDefault(x => x.Id == item.FkAquarium).Id)
             </td>
             <td>
                 @if (Model.IsUserOrAdmin())

@@ -1,4 +1,5 @@
-﻿using FishAquariumWebApp.Models;
+﻿using FishAquariumWebApp.Enums;
+using FishAquariumWebApp.Models;
 using FishAquariumWebApp.Services.Interfaces;
 using Microsoft.AspNetCore.Http;
 
