@@ -4,13 +4,15 @@ using FishAquariumWebApp.Models;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.Mvc.RazorPages;
 using Microsoft.EntityFrameworkCore;
+using System.Collections.Generic;
 
 namespace FishAquariumWebApp.Pages.AquariumTasks
 {
     public class EditModel : PageModel
     {
         private readonly FishAquariumWebApp.Configurations.FishAquariumContext _context;
-
+        public List<Microsoft.AspNetCore.Mvc.Rendering.SelectListItem> UserOptions { get; set; }
+        public List<Microsoft.AspNetCore.Mvc.Rendering.SelectListItem> AquariumOptions { get; set; }
         public EditModel(FishAquariumWebApp.Configurations.FishAquariumContext context)
         {
             _context = context;
@@ -21,6 +23,18 @@ namespace FishAquariumWebApp.Pages.AquariumTasks
 
         public async Task<IActionResult> OnGetAsync(int? id)
         {
+            UserOptions = _context.AquariumUser.Select(a => new Microsoft.AspNetCore.Mvc.Rendering.SelectListItem
+            {
+                Value = a.Id.ToString(),
+                Text = a.FirstName
+            }).ToList();
+
+            AquariumOptions = _context.Aquarium.Select(a => new Microsoft.AspNetCore.Mvc.Rendering.SelectListItem
+            {
+                Value = a.Id.ToString(),
+                Text = a.Id.ToString()
+            }).ToList();
+
             if (id == null)
             {
                 return NotFound();
