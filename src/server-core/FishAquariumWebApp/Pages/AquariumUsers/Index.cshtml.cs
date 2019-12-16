@@ -46,7 +46,7 @@ namespace FishAquariumWebApp.Pages.AquariumUsers
                         RegistrationDate = users.RegistrationDate,
                         Email = users.Email,
                         Code = users.Code,
-                        Type = (int)users.Type,
+                        Type = (int)users.Type == 0? "Admin" : (int)users.Type == 1 ? "Supervisors": "User",
                         TaskCount = usersTasks.Count()
 
            }).ToList();
@@ -65,6 +65,8 @@ namespace FishAquariumWebApp.Pages.AquariumUsers
                 default:  
                     break;
             }
+
+           
         }
 
     }
@@ -77,7 +79,7 @@ namespace FishAquariumWebApp.Pages.AquariumUsers
         public DateTime? RegistrationDate { get; set; }
         public string Email { get; set; }
         public string Code { get; set; }
-        public int Type { get; set; }
+        public String Type { get; set; }
         public int TaskCount { get; set; }
         public int Id { get; set; }
     }
