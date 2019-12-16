@@ -23,8 +23,10 @@
   border: 2px solid #ddd;
 }</style>
 
+<h3 id="noitems" style="display:none" >No items</h3>
 
 <table id="tasktable"class="table">
+
     <thead>
         <tr>
             <th>
@@ -102,21 +104,26 @@
 
 <script>
 function myFunction(index,input) {
-  var input, filter, table, tr, td, i, txtValue;
+  var input, filter, table, tr, td, i, txtValue, tre;
   input = document.getElementById(input);
   filter = input.value.toUpperCase();
   table = document.getElementById("tasktable");
   tr = table.getElementsByTagName("tr");
   for (i = 0; i < tr.length; i++) {
     td = tr[i].getElementsByTagName("td")[index];
-    if (td) {
-      txtValue = td.textContent || td.innerText;
-      if (txtValue.toUpperCase().indexOf(filter) > -1) {
-        tr[i].style.display = "";
+      if (td) {
+          tre = document.getElementById("noitems").style;
+          tre.display = "";
+          txtValue = td.textContent || td.innerText;
+          if (txtValue.toUpperCase().indexOf(filter) > -1) {
+              tr[i].style.display = "";
+          } else {
+              tr[i].style.display = "none";
+          }
       } else {
-        tr[i].style.display = "none";
-      }
-    }       
+          tre = document.getElementById("noitems").style;
+          tre = "display: none;";
+      }      
   }
 }
 </script>
