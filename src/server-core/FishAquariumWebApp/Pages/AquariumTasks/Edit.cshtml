@@ -33,21 +33,24 @@
             </div>
             <div class="form-group">
                 <label asp-for="AquariumTask.State" class="control-label"></label>
-                <input asp-for="AquariumTask.State" class="form-control" />
-                <span asp-validation-for="AquariumTask.State" class="text-danger"></span>
+                <select asp-for="AquariumTask.State" asp-items="Html.GetEnumSelectList<Enums.TaskStateTypes>()">
+                    <option selected="selected" value="AquariumUser.State"> </option>
+                </select>                <span asp-validation-for="AquariumTask.State" class="text-danger"></span>
             </div>
             <input type="hidden" asp-for="AquariumTask.Id" />
             <div class="form-group">
-                <label>Aquarium</label>
-                <input asp-for="AquariumTask.FkAquarium" class="form-control" />
-                <span asp-validation-for="AquariumTask.FkAquarium" class="text-danger"></span>
-            </div>
+                    <label>Aquarium</label>
+                    <select asp-for="AquariumTask.FkAquarium" asp-items="Model.AquariumOptions">
+                    <option selected="selected" value=""> @*@Html.DisplayFor(modelItem => Model.AquariumOptions.Value)*@</option>
+                    </select>
+                </div>
             <div class="form-group">
-                <label>Aquarium User</label>
-                <input asp-for="AquariumTask.FkAquariumUser" class="form-control" />
-                <span asp-validation-for="AquariumTask.FkAquariumUser" class="text-danger"></span>
-            </div>
-            <div class="form-group">
+                    <label>Aquarium User</label>
+                    <select asp-for="AquariumTask.FkAquariumUser" asp-items="Model.UserOptions">
+                    <option selected="selected" value=""> @*@Html.DisplayFor(modelItem => Model.UserOptions.Value)*@</option>
+                    </select>
+                </div>
+                <div class="form-group">
                 <input type="submit" value="Save" class="btn btn-default" />
             </div>
         </form>
